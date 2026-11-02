@@ -1,258 +1,701 @@
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#171326">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#100e1b">
 <title>قصتي | Qissaty</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;500;600;700;800&display=swap');
-:root{--bg:#11101b;--panel:#1d1a2c;--panel2:#262139;--gold:#e8c77b;--gold2:#b98c48;--text:#f7f0e3;--muted:#b8afc4;--line:#39334d;--pink:#d99ab3;--green:#8bc9a8}
-*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 15% 0%,#332747 0,transparent 38%),var(--bg);color:var(--text);font-family:Cairo,Arial,sans-serif;min-height:100vh}
-button,input,textarea,select{font:inherit}button{cursor:pointer;border:0}
-header{height:74px;display:flex;align-items:center;justify-content:space-between;padding:0 5%;border-bottom:1px solid #ffffff12;background:#11101bd9;position:sticky;top:0;z-index:5;backdrop-filter:blur(14px)}
-.brand{display:flex;align-items:center;gap:12px;font-weight:800;font-size:22px}.logo{width:42px;height:42px;border-radius:14px;background:linear-gradient(145deg,#f1d99b,#a8783d);display:grid;place-items:center;color:#241a2c;font-size:24px;box-shadow:0 5px 24px #d9b76b40}
-nav{display:flex;gap:8px;align-items:center}nav button,.ghost{background:transparent;color:var(--muted);padding:10px 13px;border-radius:12px}nav button.active,nav button:hover,.ghost:hover{background:#ffffff12;color:var(--gold)}
-.wrap{max-width:1180px;margin:auto;padding:30px 22px 80px}.hero{padding:44px 0 28px;display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center}
-.eyebrow{color:var(--gold);font-size:13px;letter-spacing:1px}.hero h1{font-family:Amiri,serif;font-size:clamp(38px,6vw,66px);line-height:1.25;margin:8px 0}.hero p{color:var(--muted);max-width:650px;line-height:2}
-.hero-art{min-height:270px;border:1px solid #ffffff18;border-radius:28px;background:linear-gradient(140deg,#342744,#1c1a2c 60%,#49354c);display:grid;place-items:center;position:relative;overflow:hidden}
-.book{width:155px;height:190px;background:linear-gradient(120deg,#8c5b3d,#3e2838);border:5px solid #d8b975;border-radius:8px 18px 18px 8px;transform:rotate(-8deg);box-shadow:18px 20px 30px #08070d99;display:grid;place-items:center;color:#f5d99a;font:30px Amiri;position:relative}
-.book:after{content:"";position:absolute;inset:10px;border:1px solid #e8c77b88;border-radius:4px}
-.spark{position:absolute;color:var(--gold);font-size:28px;animation:float 4s ease-in-out infinite}.s1{top:25px;right:22%}.s2{bottom:30px;left:18%;animation-delay:1s}.s3{top:45%;left:15%;animation-delay:2s}@keyframes float{50%{transform:translateY(-12px) rotate(15deg)}}
-.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}.primary{background:linear-gradient(135deg,#f0d99b,#c79c59);color:#251d2c;padding:12px 22px;border-radius:13px;font-weight:800;box-shadow:0 8px 22px #d3ad6540}.secondary{background:#ffffff0d;color:var(--text);border:1px solid var(--line);padding:11px 20px;border-radius:13px}
-.section-head{display:flex;justify-content:space-between;align-items:center;margin:30px 0 15px}.section-head h2{font:700 28px Amiri;margin:0}.muted{color:var(--muted)}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{background:linear-gradient(145deg,#211e31,#191725);border:1px solid var(--line);border-radius:19px;padding:20px;min-width:0}.card h3{margin:8px 0;font-size:18px}.card p{color:var(--muted);line-height:1.8;font-size:14px}.card-icon{width:48px;height:48px;border-radius:15px;background:#d8b66c20;color:var(--gold);display:grid;place-items:center;font-size:24px}
-.page{display:none}.page.active{display:block}.panel{background:#1b1928;border:1px solid var(--line);border-radius:22px;padding:24px;margin-top:20px}.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0}.tab{padding:10px 17px;border-radius:12px;background:#ffffff0b;color:var(--muted);border:1px solid transparent}.tab.active{background:#d8b66c20;color:var(--gold);border-color:#d8b66c55}
-label{display:block;color:#e8dfd0;font-size:14px;margin:14px 0 7px}input,textarea,select{width:100%;background:#12111c;border:1px solid #403952;color:var(--text);border-radius:12px;padding:12px 14px;outline:none}input:focus,textarea:focus,select:focus{border-color:var(--gold)}textarea{min-height:100px;resize:vertical;line-height:1.8}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}.chapter-fields{display:grid;gap:12px}.chapter-row{padding:14px;border:1px solid var(--line);border-radius:14px;background:#ffffff05}.hidden{display:none!important}.story-list{display:grid;gap:12px}.story-item{display:flex;align-items:center;gap:16px;background:#211e30;border:1px solid var(--line);padding:15px;border-radius:16px}.story-cover{width:70px;height:82px;border-radius:10px;background:linear-gradient(145deg,#654a64,#28213a);display:grid;place-items:center;font-size:28px;flex-shrink:0}.story-info{flex:1;min-width:0}.story-info p{margin:3px 0;color:var(--muted);font-size:13px}.icon-btn{background:#ffffff0c;color:var(--gold);border-radius:10px;padding:9px 11px;margin:2px}.reader{max-width:850px;margin:20px auto}.reader h1{font:700 42px Amiri;color:var(--gold)}.reader h2{font:700 28px Amiri}.reader .prose{font:20px/2.25 Amiri;color:#eee5d6;white-space:pre-wrap}.scene{height:190px;border-radius:18px;background:linear-gradient(130deg,#3b2c4d,#1a2638,#5a3c4c);display:grid;place-items:center;font-size:55px;margin:20px 0;border:1px solid #ffffff20}.reader-nav{display:flex;justify-content:space-between;gap:12px;margin-top:25px}.pill{display:inline-block;padding:5px 10px;border-radius:30px;background:#d8b66c20;color:var(--gold);font-size:12px}
-.empty{text-align:center;padding:42px 15px;color:var(--muted)}.toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);background:#e8c77b;color:#241d2a;padding:12px 20px;border-radius:12px;font-weight:700;display:none;z-index:20;box-shadow:0 8px 25px #0008}
-footer{border-top:1px solid #ffffff12;padding:24px 5%;color:var(--muted);text-align:center;font-size:12px}
-.modal{position:fixed;inset:0;background:#07060dcc;display:none;place-items:center;padding:20px;z-index:10}.modal.show{display:grid}.modal-box{width:min(650px,100%);background:#211e30;border:1px solid var(--line);border-radius:20px;padding:24px;max-height:90vh;overflow:auto}
-@media(max-width:800px){header{padding:0 14px;height:auto;min-height:68px;flex-wrap:wrap}nav{width:100%;overflow:auto;padding:5px 0 10px}nav button{white-space:nowrap;font-size:12px}.wrap{padding:18px 14px 55px}.hero{grid-template-columns:1fr;padding-top:24px}.hero-art{min-height:210px}.cards{grid-template-columns:1fr}.grid2{grid-template-columns:1fr}.story-item{align-items:flex-start}.story-item .actions{margin:0}.reader h1{font-size:34px}.reader .prose{font-size:18px}}
-</style></head>
+:root{
+  --bg:#100e1b;--panel:#191627;--panel2:#211d32;--gold:#e9bd76;
+  --gold2:#f8dba6;--purple:#a78bfa;--text:#f6f0e8;
+  --muted:#aaa2b8;--line:#ffffff14;--red:#e98c9b;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;background:
+  radial-gradient(ellipse at 85% 0%,#49326735,transparent 38%),
+  radial-gradient(ellipse at 0% 65%,#a7773d12,transparent 40%),var(--bg);
+  color:var(--text);font-family:Cairo,sans-serif;min-height:100vh;
+}
+button,input,textarea,select{font:inherit}
+button{cursor:pointer}
+button:disabled{opacity:.5;cursor:not-allowed}
+.topbar{
+  position:sticky;top:0;z-index:20;background:#100e1beF;
+  border-bottom:1px solid var(--line);backdrop-filter:blur(18px);
+}
+.nav{
+  max-width:1180px;margin:auto;padding:13px 20px;
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:20px}
+.logo{
+  width:42px;height:42px;border-radius:14px;display:grid;place-items:center;
+  background:linear-gradient(145deg,#f5d69a,#9d6c37);color:#201528;
+  font-size:23px;box-shadow:0 5px 24px #e9bd7630;
+}
+.brand small{display:block;color:var(--muted);font-size:10px;font-weight:500;letter-spacing:2px}
+.nav-actions{display:flex;gap:8px}
+.container{max-width:1180px;margin:auto;padding:25px 20px 70px}
+.hero{
+  min-height:285px;border:1px solid #d9b67d30;border-radius:26px;
+  padding:35px;position:relative;overflow:hidden;
+  background:linear-gradient(115deg,#21182fef,#211b30dc 60%,#382746aa);
+}
+.hero:before{
+  content:"✦";position:absolute;left:8%;top:4%;font-size:170px;
+  color:#f1d19b12;transform:rotate(15deg);pointer-events:none;
+}
+.hero:after{
+  content:"";position:absolute;width:280px;height:280px;border-radius:50%;
+  border:1px solid #e9bd7620;left:-80px;bottom:-190px;
+  box-shadow:0 0 0 25px #e9bd7608,0 0 0 50px #e9bd7605;
+}
+.eyebrow{color:var(--gold);font-size:12px;letter-spacing:2px;font-weight:700}
+h1{font-family:Amiri,serif;font-size:clamp(38px,7vw,65px);line-height:1.2;margin:12px 0}
+.hero p{color:#d0c7d8;max-width:600px;line-height:2;margin:0}
+.hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+.btn{
+  border:1px solid var(--line);border-radius:12px;padding:11px 18px;
+  background:var(--panel2);color:var(--text);transition:.2s;
+}
+.btn:hover{transform:translateY(-2px);border-color:#e9bd7670}
+.btn.primary{background:linear-gradient(120deg,#f2d39c,#c18c51);color:#24182a;border:0;font-weight:800}
+.btn.ghost{background:transparent}
+.btn.danger{color:var(--red)}
+.tabs{display:flex;gap:8px;margin:25px 0;flex-wrap:wrap}
+.tab{
+  padding:10px 17px;border:1px solid var(--line);border-radius:12px;
+  color:var(--muted);background:#ffffff05;
+}
+.tab.active{background:#e9bd7618;color:var(--gold2);border-color:#e9bd7660}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:20px;align-items:start}
+.panel{
+  background:linear-gradient(145deg,#1b1829,#171523);
+  border:1px solid var(--line);border-radius:20px;padding:22px;
+}
+.panel h2{font-family:Amiri,serif;font-size:27px;margin:0 0 7px}
+.sub{color:var(--muted);font-size:13px;line-height:1.9}
+.field{margin-top:18px}
+.field label{display:block;color:#e7d8c5;font-size:13px;margin-bottom:8px;font-weight:700}
+input,textarea,select{
+  width:100%;background:#100e1b;border:1px solid #ffffff20;color:var(--text);
+  border-radius:11px;padding:12px 13px;outline:none;
+}
+input:focus,textarea:focus,select:focus{border-color:#d9ad6d}
+textarea{min-height:100px;resize:vertical;line-height:1.9}
+select{color-scheme:dark}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.chip{border:1px solid var(--line);padding:6px 11px;border-radius:30px;color:var(--muted);font-size:12px;cursor:pointer}
+.chip:hover{border-color:var(--gold);color:var(--gold)}
+.side-stat{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:15px}
+.stat{background:#ffffff07;border:1px solid var(--line);padding:14px;border-radius:14px}
+.stat strong{display:block;color:var(--gold2);font-size:24px}
+.stat span{color:var(--muted);font-size:11px}
+.hidden{display:none!important}
+.section-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:30px 0 14px}
+.section-head h2{font-family:Amiri,serif;font-size:28px;margin:0}
+.story-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+.story-card{
+  border:1px solid var(--line);background:linear-gradient(145deg,#211d30,#191625);
+  border-radius:17px;padding:17px;min-width:0;
+}
+.story-card h3{font-family:Amiri,serif;font-size:23px;margin:0 0 5px}
+.story-card p{color:var(--muted);font-size:12px;line-height:1.8;min-height:42px}
+.story-meta{display:flex;gap:7px;flex-wrap:wrap;color:var(--gold);font-size:11px}
+.card-actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:14px}
+.small-btn{background:#ffffff09;color:var(--text);border:1px solid var(--line);padding:7px 10px;border-radius:9px;font-size:12px}
+.empty{text-align:center;padding:40px 15px;color:var(--muted);border:1px dashed #ffffff25;border-radius:17px}
+.empty .symbol{font-size:38px;color:var(--gold)}
+.progress-wrap{margin-top:20px;background:#ffffff10;height:8px;border-radius:20px;overflow:hidden}
+.progress-bar{height:100%;width:0;background:linear-gradient(90deg,#a78bfa,#e9bd76);transition:width .4s}
+.status{margin-top:12px;color:var(--gold2);font-size:13px;line-height:1.8}
+.steps{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.step{font-size:11px;color:var(--muted);padding:6px 10px;border-radius:20px;background:#ffffff08}
+.step.done{color:#a8dfb7;background:#5cbd7918}
+.step.current{color:var(--gold);background:#e9bd7618}
+.reader{
+  position:fixed;inset:0;z-index:50;background:#0d0b16;
+  overflow:auto;padding:20px;
+}
+.reader-inner{max-width:850px;margin:20px auto 80px}
+.reader-top{display:flex;justify-content:space-between;gap:10px;align-items:center;position:sticky;top:0;background:#0d0b16ed;padding:12px 0;z-index:2}
+.reader-title{text-align:center;font-family:Amiri,serif;font-size:38px;color:var(--gold2);margin:35px 0 10px}
+.reader-summary{text-align:center;color:var(--muted);line-height:2;margin-bottom:35px}
+.chapter{
+  border-top:1px solid var(--line);padding:25px 0;
+  font-family:Amiri,serif;font-size:21px;line-height:2.25;white-space:pre-wrap;
+}
+.chapter h3{font-size:29px;color:var(--gold);margin:0 0 15px}
+.modal{
+  position:fixed;inset:0;z-index:60;background:#000a;display:grid;
+  place-items:center;padding:15px;
+}
+.modal-box{background:#1b1829;border:1px solid var(--line);border-radius:18px;padding:22px;width:min(600px,100%);max-height:90vh;overflow:auto}
+.toast{
+  position:fixed;bottom:20px;left:50%;transform:translateX(-50%);
+  background:#282239;border:1px solid #e9bd7660;color:var(--text);
+  padding:11px 18px;border-radius:12px;z-index:100;box-shadow:0 8px 35px #0008;
+}
+footer{text-align:center;color:#777084;font-size:11px;padding:35px 10px}
+@media(max-width:800px){
+ .layout{grid-template-columns:1fr}
+ .hero{padding:25px;min-height:260px}
+ .side{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+ .side .panel{padding:15px}
+}
+@media(max-width:560px){
+ .container{padding:15px 12px 50px}
+ .nav{padding:10px 12px}
+ .brand{font-size:17px}
+ .nav-actions .btn{padding:8px 10px;font-size:11px}
+ .hero{border-radius:19px;padding:22px}
+ .story-grid{grid-template-columns:1fr}
+ .row2{grid-template-columns:1fr}
+ .side{grid-template-columns:1fr}
+ .panel{padding:17px}
+ .reader{padding:12px}
+ .chapter{font-size:19px}
+}
+</style>
+</head>
 <body>
-<header><div class="brand"><div class="logo">ق</div><span>قصتي <small style="color:var(--gold);font-size:11px">QISSATY</small></span></div>
-<nav>
-<button class="active" data-page="home">الرئيسية</button><button data-page="create">أنشئ قصة</button><button data-page="library">مكتبتي</button><button data-page="favorites">المفضلة</button><button data-page="settings">الإعدادات</button>
-</nav></header>
-<main class="wrap">
-<section id="home" class="page active">
-<div class="hero"><div><div class="eyebrow">كل فكرة تستحق أن تصبح حكاية</div><h1>عالم كامل…<br>يبدأ من خيالك.</h1><p>اصنع قصصًا مختلفة، من المغامرات والألغاز إلى الخيال والدراما. اختر فكرتك أو دع الخيال يفاجئك، وتابع حكاية نور وحنان في كل عالم جديد.</p><div class="actions"><button class="primary" onclick="showPage('create')">ابدأ تأليف قصة ✦</button><button class="secondary" onclick="showPage('library')">افتح مكتبتي</button></div></div>
-<div class="hero-art"><span class="spark s1">✧</span><span class="spark s2">✦</span><span class="spark s3">✧</span><div class="book">قصتي</div></div></div>
-<div class="section-head"><h2>رحلتك الإبداعية</h2><span class="muted">مساحة لخيالك</span></div>
-<div class="cards"><div class="card"><div class="card-icon">🎲</div><h3>قصة عشوائية</h3><p>اترك الاختيارات للتطبيق: النوع، العالم، العقدة، والشخصيات المساندة.</p><button class="secondary" onclick="setMode('random')">جرّب الآن</button></div><div class="card"><div class="card-icon">✍️</div><h3>من فكرتك</h3><p>اكتب ملخصك وحدد عنوان ووصف كل فصل، وساعد القصة أن تسير كما تتخيل.</p><button class="secondary" onclick="setMode('custom')">اكتب فكرتك</button></div><div class="card"><div class="card-icon">📚</div><h3>مكتبتك الخاصة</h3><p>كل قصة تحفظها تبقى هنا لتكملها أو تعدّلها في أي وقت.</p><button class="secondary" onclick="showPage('library')">تصفح المكتبة</button></div></div>
-<div class="section-head"><h2>أحدث حكاياتك</h2><button class="ghost" onclick="showPage('library')">عرض الكل ←</button></div><div id="recentStories" class="story-list"></div>
+
+<header class="topbar">
+  <div class="nav">
+    <div class="brand">
+      <div class="logo">✦</div>
+      <div>قصتي <small>QISSATY · STORY STUDIO</small></div>
+    </div>
+    <div class="nav-actions">
+      <button class="btn ghost" onclick="showLibrary()">مكتبتي</button>
+      <button class="btn ghost" onclick="exportLibrary()">تصدير</button>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="mainPage">
+  <section class="hero">
+    <div class="eyebrow">YOUR IMAGINATION, YOUR WORLD</div>
+    <h1>كل حكاية تبدأ<br>بفكرة صغيرة.</h1>
+    <p>اصنع عالمك، اختر أبطالك، ودع الحكاية تنمو فصلًا بعد فصل. هنا تبدأ القصص التي لم تُكتب بعد.</p>
+    <div class="hero-actions">
+      <button class="btn primary" onclick="scrollToCreator()">✦ ابدأ حكاية جديدة</button>
+      <button class="btn" onclick="showLibrary()">افتح مكتبتي</button>
+    </div>
+  </section>
+
+  <div class="tabs">
+    <button class="tab active" id="tabRandom" onclick="setMode('random')">✧ قصة عشوائية</button>
+    <button class="tab" id="tabCustom" onclick="setMode('custom')">✎ فكرة مخصصة</button>
+    <button class="tab" id="tabLibrary" onclick="showLibrary()">▤ مكتبتي</button>
+    <button class="tab" id="tabFav" onclick="showFavorites()">♡ المفضلة</button>
+  </div>
+
+  <div class="layout" id="creatorLayout">
+    <section class="panel" id="creatorPanel">
+      <h2 id="creatorTitle">دع الخيال يختار</h2>
+      <div class="sub" id="creatorDesc">اختر بعض التفاصيل، وسنبتكر لك حكاية جديدة من الصفر.</div>
+
+      <div class="field hidden" id="titleField">
+        <label>عنوان القصة (اختياري)</label>
+        <input id="storyTitle" maxlength="120" placeholder="اكتب عنوانًا أو اتركه للخيال">
+      </div>
+
+      <div class="field hidden" id="ideaField">
+        <label>فكرة القصة</label>
+        <textarea id="storyIdea" placeholder="احكِ لنا الفكرة التي تدور في خيالك..."></textarea>
+      </div>
+
+      <div class="row2">
+        <div class="field">
+          <label>نوع القصة</label>
+          <select id="genre">
+            <option>فانتازيا</option>
+            <option>مغامرات</option>
+            <option>غموض وألغاز</option>
+            <option>خيال علمي</option>
+            <option>رومانسية</option>
+            <option>دراما اجتماعية</option>
+            <option>رعب نفسي</option>
+            <option>تاريخية</option>
+            <option>كوميدية</option>
+            <option>عالم سحري</option>
+            <option>عشوائي</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>عدد الفصول</label>
+          <select id="chapterCount">
+            <option value="1">فصل واحد</option>
+            <option value="2">فصلان</option>
+            <option value="3" selected>3 فصول</option>
+            <option value="4">4 فصول</option>
+            <option value="5">5 فصول</option>
+            <option value="6">6 فصول</option>
+            <option value="7">7 فصول</option>
+            <option value="8">8 فصول</option>
+            <option value="9">9 فصول</option>
+            <option value="10">10 فصول</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>أسلوب الكتابة</label>
+        <select id="style">
+          <option>سرد أدبي سينمائي غني بالتفاصيل</option>
+          <option>أسلوب روائي عميق وشاعري</option>
+          <option>سريع ومليء بالمفاجآت</option>
+          <option>بسيط ومناسب للأطفال</option>
+          <option>واقعي وإنساني</option>
+          <option>ملحمي وفانتازي</option>
+          <option>غموض وتشويق تدريجي</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>تفاصيل إضافية (اختياري)</label>
+        <textarea id="hint" placeholder="شخصيات تحب وجودها، مكان معين، نهاية سعيدة أو غامضة، تفاصيل تريدها..."></textarea>
+      </div>
+
+      <div class="field">
+        <label>ملاحظات الفصول (اختياري)</label>
+        <div class="sub">يمكنك كتابة توجيه لكل فصل في خانته.</div>
+        <div id="chapterHints"></div>
+      </div>
+
+      <div class="field">
+        <button class="btn primary" id="generateBtn" style="width:100%;padding:15px" onclick="generateStory()">✦ ابدأ تأليف القصة</button>
+      </div>
+
+      <div id="progressArea" class="hidden">
+        <div class="progress-wrap"><div class="progress-bar" id="progressBar"></div></div>
+        <div class="status" id="progressStatus">نجهز عالم الحكاية...</div>
+        <div class="steps" id="progressSteps"></div>
+      </div>
+    </section>
+
+    <aside class="side">
+      <div class="panel">
+        <h2>مساحة الخيال</h2>
+        <p class="sub">كل قصة عالم مستقل. ابدأ بفكرة، واترك للشخصيات فرصة أن تفاجئك.</p>
+        <div class="side-stat">
+          <div class="stat"><strong id="totalCount">0</strong><span>قصة في المكتبة</span></div>
+          <div class="stat"><strong id="favCount">0</strong><span>قصة مفضلة</span></div>
+        </div>
+      </div>
+      <div class="panel">
+        <h2>كيف تعمل قصتي؟</h2>
+        <p class="sub">١. نبتكر مخططًا كاملًا.</p>
+        <p class="sub">٢. نكتب كل فصل على حدة.</p>
+        <p class="sub">٣. نحتفظ بملخصات السابق لضمان الاستمرارية.</p>
+        <p class="sub">٤. تحفظ قصصك على جهازك.</p>
+      </div>
+    </aside>
+  </div>
+
+  <section id="librarySection" class="hidden">
+    <div class="section-head">
+      <div><h2 id="listTitle">مكتبتي</h2><div class="sub" id="listDesc">كل الحكايات التي صنعتها.</div></div>
+      <button class="btn" onclick="scrollToCreator()">+ قصة جديدة</button>
+    </div>
+    <div class="story-grid" id="storyGrid"></div>
+  </section>
+</main>
+
+<section id="reader" class="reader hidden">
+  <div class="reader-inner">
+    <div class="reader-top">
+      <button class="btn" onclick="closeReader()">← رجوع</button>
+      <div class="nav-actions">
+        <button class="btn" onclick="toggleCurrentFavorite()">♡ المفضلة</button>
+        <button class="btn" onclick="downloadCurrent()">حفظ</button>
+      </div>
+    </div>
+    <div id="readerContent"></div>
+  </div>
 </section>
-<section id="create" class="page">
-<div class="section-head"><h2>لنبدأ حكاية جديدة</h2><span class="pill">نور وحنان في كل عالم</span></div>
-<div class="tabs"><button class="tab active" id="randomTab" onclick="setMode('random')">🎲 إنشاء عشوائي</button><button class="tab" id="customTab" onclick="setMode('custom')">✍️ من فكرتي</button></div>
-<div class="panel">
-<div id="randomForm">
-<div class="grid2"><div><label>نوع القصة</label><select id="genre"><option value="عشوائي">فاجئني بنوع عشوائي</option><option>غموض وألغاز</option><option>خيال وفانتازيا</option><option>مغامرات</option><option>كوميديا</option><option>دراما وواقعية</option><option>رومانسية مناسبة للعمر</option><option>تعليمية</option><option>قصص أطفال</option><option>خيال علمي</option></select></div><div><label>عدد الفصول (1–10)</label><input id="randomCount" type="number" min="1" max="10" value="4"></div></div>
-<div><label>أسلوب العالم</label><select id="style"><option>يختاره التطبيق</option><option>واقعي سينمائي</option><option>أنمي</option><option>ثلاثي الأبعاد كرتوني</option><option>رسوم كتب الأطفال</option><option>فانتازيا مرسومة</option></select></div>
-<label>ملاحظة اختيارية</label><textarea id="randomHint" placeholder="مثلاً: أريد نهاية غير متوقعة أو أحداثًا في مدينة مهجورة..."></textarea>
-<button class="primary" onclick="createRandom()">اصنع حكايتي ✨</button>
+
+<div id="editModal" class="modal hidden">
+  <div class="modal-box">
+    <div class="section-head"><h2>تعديل القصة</h2><button class="btn" onclick="closeEdit()">✕</button></div>
+    <div class="field"><label>العنوان</label><input id="editTitle"></div>
+    <div class="field"><label>النبذة</label><textarea id="editSummary"></textarea></div>
+    <div class="field"><label>محتوى القصة</label><textarea id="editBody" style="min-height:280px"></textarea></div>
+    <button class="btn primary" style="width:100%;margin-top:15px" onclick="saveEdit()">حفظ التعديلات</button>
+  </div>
 </div>
-<div id="customForm" class="hidden">
-<label>عنوان القصة</label><input id="customTitle" placeholder="اكتب عنوانًا مؤقتًا أو نهائيًا">
-<label>ملخص القصة — مطلوب</label><textarea id="customSummary" placeholder="اكتب الفكرة العامة، الشخصيات، العالم، وما الذي تريد أن تدور حوله القصة..."></textarea>
-<div class="grid2"><div><label>النوع</label><select id="customGenre"><option>غموض وألغاز</option><option>خيال وفانتازيا</option><option>مغامرات</option><option>كوميديا</option><option>دراما وواقعية</option><option>رومانسية مناسبة للعمر</option><option>تعليمية</option><option>قصص أطفال</option><option>خيال علمي</option></select></div><div><label>الأسلوب الفني</label><select id="customStyle"><option>يستنتجه من الفكرة</option><option>واقعي سينمائي</option><option>أنمي</option><option>ثلاثي الأبعاد كرتوني</option><option>رسوم كتب الأطفال</option><option>فانتازيا مرسومة</option></select></div></div>
-<label>عدد الفصول (1–10)</label><input id="customCount" type="number" min="1" max="10" value="3" onchange="renderChapterInputs()">
-<div class="section-head"><h3>تفاصيل الفصول</h3><span class="muted">عنوان ووصف لكل فصل</span></div><div id="chapterInputs" class="chapter-fields"></div>
-<button class="primary" onclick="createCustom()">حوّل فكرتي إلى قصة ✨</button>
-</div>
-<p class="muted" style="font-size:12px;margin-top:18px">التأليف النصي متصل بخادم قصتي للذكاء الاصطناعي. يلزم اتصال بالإنترنت، وقد تخضع الخدمة لحصة استخدام مجانية.</p>
-</div></section>
-<section id="library" class="page"><div class="section-head"><h2>مكتبتي</h2><span class="muted" id="libraryCount"></span></div><div id="libraryStories" class="story-list"></div></section>
-<section id="favorites" class="page"><div class="section-head"><h2>القصص المفضلة</h2></div><div id="favoriteStories" class="story-list"></div></section>
-<section id="settings" class="page"><div class="section-head"><h2>الإعدادات</h2></div><div class="panel"><h3>بياناتك على هذا الجهاز</h3><p class="muted">تحفظ القصص والمفضلة محليًا في متصفحك باستخدام التخزين المحلي. لن تنتقل تلقائيًا إلى جهاز آخر في هذه النسخة.</p><div class="actions"><button class="secondary" onclick="exportData()">تصدير نسخة احتياطية</button><label class="secondary" style="display:inline-block;margin:0;cursor:pointer">استيراد نسخة <input type="file" accept="application/json" onchange="importData(event)" style="display:none"></label><button class="secondary" onclick="clearAll()">حذف كل البيانات</button></div></div><div class="panel"><h3>الذكاء الاصطناعي والصور والصوت</h3><p class="muted">خادم التأليف النصي: متصل عبر Cloudflare Workers AI. توليد الصور والصوت لم يتم ربطه بعد. لا تضع مفاتيح API داخل ملف الموقع.</p><span class="pill">التأليف النصي متصل</span></div></section>
-<section id="reader" class="page"><div class="reader"><button class="ghost" onclick="showPage('library')">← العودة للمكتبة</button><div id="readerContent"></div></div></section>
-</main><footer>قصتي | Qissaty — حكاياتك، بطريقتك. <br>التأليف النصي عبر خادم قصتي للذكاء الاصطناعي.</footer>
-<div id="toast" class="toast"></div>
-<div id="editModal" class="modal"><div class="modal-box"><div class="section-head"><h2>تعديل القصة</h2><button class="ghost" onclick="closeEdit()">✕</button></div><label>العنوان</label><input id="editTitle"><label>ملخص القصة</label><textarea id="editSummary"></textarea><div id="editChapters"></div><button class="primary" onclick="saveEdit()">حفظ التعديلات</button></div></div>
+
+<input type="file" id="importFile" accept=".json,application/json" class="hidden">
+<div id="toast" class="toast hidden"></div>
+
+<footer>قصتي · Qissaty — كل حكاية تستحق أن تُروى</footer>
+
 <script>
-const KEY='qissaty_stories_v1';let stories=load(),currentStory=null,currentChapter=0,editingId=null,mode='random';
-const QISSATY_API='https://qissityai.nourmohamed8922.workers.dev/generate';
+"use strict";
 
-function setGenerating(button, busy, label){
-  if(!button) return;
-  button.disabled=busy;
-  button.dataset.originalLabel ||= button.textContent;
-  button.textContent=busy?'جارٍ تأليف القصة بالذكاء الاصطناعي…':(label||button.dataset.originalLabel);
-  button.style.opacity=busy?'.65':'1';
-  button.style.cursor=busy?'wait':'pointer';
-}
+const API = "https://qissityai.nourmohamed8922.workers.dev";
+const KEY = "qissaty_stories_v1";
 
-function parseGeneratedStory(raw, fallbackTitle, fallbackSummary, genre, style, count){
-  const text=String(raw||'').trim();
-  // The Worker returns Arabic prose with chapter headings. Split on common heading forms.
-  const re=/(?:^|\n)\s*(?:الفصل|Chapter)\s*(?:رقم\s*)?(\d{1,2})\s*[:：\-–—]\s*([^\n]*)/g;
-  const matches=[...text.matchAll(re)];
-  let chapters=[];
-  if(matches.length){
-    for(let i=0;i<matches.length;i++){
-      const start=matches[i].index + (text.slice(matches[i].index).startsWith('\n')?1:0);
-      const bodyStart=matches[i].index + matches[i][0].length;
-      const end=i+1<matches.length?matches[i+1].index:text.length;
-      chapters.push({
-        title:matches[i][2].trim() || `الفصل ${i+1}`,
-        description:'',
-        content:text.slice(bodyStart,end).trim()
-      });
-    }
-  } else {
-    chapters=[{title:'الحكاية',description:'',content:text}];
-  }
-  chapters=chapters.filter(c=>c.content);
-  if(!chapters.length) chapters=[{title:'الحكاية',description:'',content:text}];
-  return buildStory(fallbackTitle || 'حكاية جديدة',genre,
-    fallbackSummary || 'قصة ألّفها الذكاء الاصطناعي في قصتي.',
-    chapters,style);
-}
+let stories = loadStories();
+let mode = "random";
+let currentStoryId = null;
+let editingStoryId = null;
+let currentList = "all";
+let busy = false;
 
-async function requestAI(payload){
-  let response;
+function loadStories(){
   try{
-    response=await fetch(QISSATY_API,{
-      method:'POST',
-      headers:{'Content-Type':'application/json'},
-      body:JSON.stringify(payload)
-    });
-  }catch(e){
-    throw new Error('تعذر الاتصال بالخادم. تأكد من الإنترنت وحاول مرة أخرى.');
+    const value = JSON.parse(localStorage.getItem(KEY) || "[]");
+    return Array.isArray(value) ? value : [];
+  }catch(e){ return []; }
+}
+function saveStories(){
+  localStorage.setItem(KEY, JSON.stringify(stories));
+  updateStats();
+}
+function id(){
+  return Date.now().toString(36) + Math.random().toString(36).slice(2,8);
+}
+function escapeHTML(value){
+  return String(value ?? "").replace(/[&<>"']/g, c => ({
+    "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
+  })[c]);
+}
+function toast(message){
+  const el=document.getElementById("toast");
+  el.textContent=message;
+  el.classList.remove("hidden");
+  clearTimeout(toast.timer);
+  toast.timer=setTimeout(()=>el.classList.add("hidden"),2800);
+}
+function updateStats(){
+  document.getElementById("totalCount").textContent=stories.length;
+  document.getElementById("favCount").textContent=stories.filter(s=>s.favorite).length;
+}
+function scrollToCreator(){
+  document.getElementById("creatorLayout").scrollIntoView({behavior:"smooth"});
+  showCreator();
+}
+function showCreator(){
+  document.getElementById("creatorLayout").classList.remove("hidden");
+  document.getElementById("librarySection").classList.add("hidden");
+  document.getElementById("tabLibrary").classList.remove("active");
+  document.getElementById("tabFav").classList.remove("active");
+}
+function showLibrary(){
+  currentList="all";
+  document.getElementById("creatorLayout").classList.add("hidden");
+  document.getElementById("librarySection").classList.remove("hidden");
+  document.getElementById("listTitle").textContent="مكتبتي";
+  document.getElementById("listDesc").textContent="كل الحكايات التي صنعتها.";
+  document.getElementById("tabLibrary").classList.add("active");
+  document.getElementById("tabFav").classList.remove("active");
+  renderStories();
+}
+function showFavorites(){
+  currentList="favorites";
+  document.getElementById("creatorLayout").classList.add("hidden");
+  document.getElementById("librarySection").classList.remove("hidden");
+  document.getElementById("listTitle").textContent="المفضلة";
+  document.getElementById("listDesc").textContent="الحكايات التي اخترت الاحتفاظ بها.";
+  document.getElementById("tabFav").classList.add("active");
+  document.getElementById("tabLibrary").classList.remove("active");
+  renderStories();
+}
+function setMode(value){
+  mode=value;
+  showCreator();
+  document.getElementById("tabRandom").classList.toggle("active",value==="random");
+  document.getElementById("tabCustom").classList.toggle("active",value==="custom");
+  document.getElementById("titleField").classList.toggle("hidden",value!=="custom");
+  document.getElementById("ideaField").classList.toggle("hidden",value!=="custom");
+  document.getElementById("creatorTitle").textContent=value==="random"?"دع الخيال يختار":"أخبرنا بحكايتك";
+  document.getElementById("creatorDesc").textContent=value==="random"
+    ?"اختر بعض التفاصيل، وسنبتكر لك حكاية جديدة من الصفر."
+    :"اكتب فكرتك، وسنحوّلها إلى قصة ذات شخصيات وأحداث مترابطة.";
+}
+function renderChapterHints(){
+  const count=Number(document.getElementById("chapterCount").value);
+  const area=document.getElementById("chapterHints");
+  const old=[...area.querySelectorAll("input")].map(x=>x.value);
+  area.innerHTML="";
+  for(let i=0;i<count;i++){
+    const input=document.createElement("input");
+    input.placeholder=`توجيه الفصل ${i+1} (اختياري)`;
+    input.style.marginTop="8px";
+    input.value=old[i]||"";
+    area.appendChild(input);
   }
+}
+document.getElementById("chapterCount").addEventListener("change",renderChapterHints);
+renderChapterHints();
+
+function renderStories(){
+  const grid=document.getElementById("storyGrid");
+  const list=stories.filter(s=>currentList==="all"||s.favorite);
+  if(!list.length){
+    grid.innerHTML=`<div class="empty" style="grid-column:1/-1">
+      <div class="symbol">✧</div><h3>لا توجد حكايات هنا بعد</h3>
+      <p>ابدأ بكتابة أول قصة، وستجدها محفوظة هنا.</p>
+      <button class="btn primary" onclick="scrollToCreator()">ابدأ قصة جديدة</button>
+    </div>`;
+    return;
+  }
+  grid.innerHTML=list.slice().reverse().map(s=>`
+    <article class="story-card">
+      <h3>${escapeHTML(s.title||"حكاية بلا عنوان")}</h3>
+      <p>${escapeHTML(s.summary||"لا توجد نبذة.")}</p>
+      <div class="story-meta">
+        <span>${escapeHTML(s.genre||"قصة")}</span>
+        <span>•</span><span>${(s.chapters||[]).length} فصل</span>
+        ${s.favorite?'<span>• ♥ مفضلة</span>':""}
+      </div>
+      <div class="card-actions">
+        <button class="small-btn" onclick="openStory('${s.id}')">قراءة</button>
+        <button class="small-btn" onclick="toggleFavorite('${s.id}')">${s.favorite?"إزالة من المفضلة":"♡ المفضلة"}</button>
+        <button class="small-btn" onclick="editStory('${s.id}')">تعديل</button>
+        <button class="small-btn" onclick="downloadStory('${s.id}')">تصدير</button>
+        <button class="small-btn" onclick="deleteStory('${s.id}')">حذف</button>
+      </div>
+    </article>
+  `).join("");
+}
+function setProgress(percent,message,step,total){
+  document.getElementById("progressArea").classList.remove("hidden");
+  document.getElementById("progressBar").style.width=percent+"%";
+  document.getElementById("progressStatus").textContent=message;
+  const steps=document.getElementById("progressSteps");
+  steps.innerHTML=`<span class="step done">✓ مخطط القصة</span>`;
+  for(let i=1;i<=total;i++){
+    const state=i<step?"done":i===step?"current":"";
+    steps.innerHTML+=`<span class="step ${state}">${i<step?"✓ ":""}الفصل ${i}</span>`;
+  }
+}
+async function post(endpoint,payload){
+  const response=await fetch(API+endpoint,{
+    method:"POST",
+    headers:{"Content-Type":"application/json"},
+    body:JSON.stringify(payload)
+  });
   let data;
-  try{data=await response.json()}catch(e){throw new Error('استجابة الخادم غير مفهومة.')}
-  if(!response.ok || !data.success){
-    throw new Error(data.error || data.details || `فشل الطلب (${response.status})`);
+  try{data=await response.json();}
+  catch(e){throw new Error("الخادم أعاد استجابة غير مفهومة.");}
+  if(!response.ok||!data.success){
+    throw new Error(data.error||data.message||"حدث خطأ في الاتصال بالخادم.");
   }
-  return data.story;
+  return data;
 }
-
-function load(){try{return JSON.parse(localStorage.getItem(KEY)||'[]')}catch(e){return []}}
-function save(){localStorage.setItem(KEY,JSON.stringify(stories));renderLists()}
-function uid(){return 'q'+Date.now().toString(36)+Math.random().toString(36).slice(2,7)}
-function toast(t){let x=document.getElementById('toast');x.textContent=t;x.style.display='block';setTimeout(()=>x.style.display='none',2600)}
-function showPage(id){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.getElementById(id).classList.add('active');document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('active',b.dataset.page===id));if(id==='library'||id==='favorites'||id==='home')renderLists();window.scrollTo(0,0)}
-document.querySelectorAll('nav button').forEach(b=>b.onclick=()=>showPage(b.dataset.page));
-function setMode(m){mode=m;document.getElementById('randomForm').classList.toggle('hidden',m!=='random');document.getElementById('customForm').classList.toggle('hidden',m!=='custom');document.getElementById('randomTab').classList.toggle('active',m==='random');document.getElementById('customTab').classList.toggle('active',m==='custom');showPage('create');if(m==='custom')renderChapterInputs()}
-function countVal(id){let n=parseInt(document.getElementById(id).value,10)||1;return Math.max(1,Math.min(10,n))}
-function renderChapterInputs(){let n=countVal('customCount');document.getElementById('customCount').value=n;let box=document.getElementById('chapterInputs');let old=[...box.querySelectorAll('.chapter-row')].map(x=>[x.querySelector('input').value,x.querySelector('textarea').value]);box.innerHTML='';for(let i=0;i<n;i++){let d=document.createElement('div');d.className='chapter-row';d.innerHTML=`<b>الفصل ${i+1}</b><label>عنوان الفصل</label><input placeholder="عنوان الفصل ${i+1}" value="${esc(old[i]?.[0]||'')}"><label>وصف ما يجب أن يحدث</label><textarea placeholder="اشرح أحداث هذا الفصل وما الذي يجب أن يتغير...">${esc(old[i]?.[1]||'')}</textarea>`;box.appendChild(d)}}
-function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
-const randomNames=['مدينة الساعات النائمة','سرّ المكتبة الزرقاء','الجزيرة التي تختفي','رسالة من الغد','ممرّ خلف المطر','حديقة النجوم السبعة'];
-const plots={
-'غموض وألغاز':['في مكان لا يلتفت إليه أحد، تظهر علامة غريبة كل ليلة. يلاحظ نور وحنان أن العلامة تتكرر في أشياء تبدو بلا علاقة، فيبدآن البحث عن الرابط.','كل إجابة تقودهما إلى سؤال أدق، وتكشف أن شخصًا ما ترك إشارات متعمدة ليصل إليها من يملك الصبر على الملاحظة.','حين تتضح الصورة، يكتشفان أن السر لم يكن في الشيء المفقود وحده، بل في سبب إخفائه.'],
-'خيال وفانتازيا':['يفتح نور وحنان بابًا إلى عالم تتغير فيه قوانين الطبيعة مع الكلمات المنطوقة. ويكتشفان أن خريطة هذا العالم لا تظهر إلا لمن يتعاون.','تختبرهما الرحلة بمواقف تتطلب الشجاعة والخيال والثقة، ويقابلان حارسًا يعرف جزءًا من الحكاية ويخفي الجزء الآخر.','يصلان إلى قلب العالم ويجدان أن إنقاذه يحتاج قرارًا يوازن بين الرغبة في العودة ومسؤولية ما اكتشفاه.'],
-'مغامرات':['تبدأ الرحلة بمهمة تبدو بسيطة، ثم تقودهما إلى طريق لم يظهر على أي خريطة. يقرران متابعة الأثر بدل العودة.','تتعقد المهمة بسبب عقبة غير متوقعة، فيقسمان العمل ويتعلمان أن لكل منهما طريقة مختلفة في حل المشكلات.','تكتمل الرحلة حين يجمعان ما تعلماه، ويكتشفان أن أعظم مكسب لم يكن الكنز بل التجربة.'],
-'كوميديا':['يجد نور وحنان نفسيهما مسؤولين عن مهمة لا تسير أي خطوة فيها كما خُطط لها. وكل محاولة للإصلاح تصنع موقفًا أكثر طرافة.','تتوالى سوء الفهم والمفاجآت، لكنهما يكتشفان أن المشكلة الحقيقية كانت افتراضات لم يسأل أحد عن صحتها.','ينتهى الارتباك بحل بسيط لم يخطر لهما، وتتحول الحكاية إلى ذكرى مضحكة.'],
-'دراما وواقعية':['يواجه نور وحنان تغييرًا في حياتهما يجبرهما على إعادة ترتيب الأولويات. لا توجد إجابة سهلة، وكل اختيار له أثر.','تظهر اختلافات في وجهات النظر، فيتعلمان التعبير بوضوح والاستماع دون استعجال الأحكام.','تصل الحكاية إلى مصالحة مع التغيير وخطوة جديدة أكثر وعيًا.'],
-'رومانسية مناسبة للعمر':['تجمع الصدفة نور وحنان في موقف يومي بسيط، ثم تتكرر اللقاءات بسبب مشروع مشترك. تنمو بينهما صداقة قائمة على الاحترام والاهتمام.','تحدث لحظة سوء فهم، فيتعلمان أن الكلام الصريح والحدود الواضحة أهم من التخمين.','تترك التجربة أثرًا دافئًا، وتفتح أمامهما بداية علاقة إنسانية صادقة دون استعجال.'],
-'تعليمية':['يكتشف نور وحنان لغزًا لا يمكن حله إلا باستخدام فكرة علمية أو مهارة جديدة. يبدآن بتجربة الفرضيات بدل التخمين.','تساعدهما الملاحظات والتجارب على فهم القاعدة، ويكتشفان أن الخطأ جزء طبيعي من التعلم.','يستخدمان ما تعلماه لحل المشكلة ويشرحان الفكرة بطريقة بسيطة للآخرين.'],
-'قصص أطفال':['يعثر نور وحنان على شيء صغير يحتاج إلى المساعدة، فيقرران معرفة ما حدث له.','يقابلان أصدقاء جدد ويتعلمان قيمة التعاون واللطف، مع مواقف لطيفة ومفاجآت آمنة.','يعود كل شيء إلى مكانه، ويتركان أثرًا جميلًا في عالمهما.'],
-'خيال علمي':['تصل إلى نور وحنان إشارة من جهاز قديم يتنبأ بحدث لم يقع بعد. يحاولان فهم مصدرها وحدود دقتها.','تقودهما البيانات إلى احتمالين متعارضين، فيختبران الأدلة ويتجنبان القفز إلى الاستنتاجات.','يكشف الحل أن المستقبل ليس نتيجة واحدة حتمية، وأن القرارات الصغيرة تصنع الفارق.']
-};
-function buildStory(title,genre,summary,chapters,style){return {id:uid(),title,genre,summary,style,created:new Date().toISOString(),favorite:false,last:0,chapters,cast:'نور وحنان',status:'غير مكتملة'}}
-// مولّد محلي موسّع: يكتب فصلًا سرديًا متكامل البنية بدل الاكتفاء بملخص قصير.
-// يظل هذا مولّدًا تجريبيًا بقوالب، وليس بديلًا عن نموذج ذكاء اصطناعي متصل.
-function longChapter(chapterTitle,description,summary,genre,index,total,hint=''){
- const isLast=index===total-1;
- const openings=[
- `لم يكن ذلك اليوم عاديًا كما بدا في ساعاته الأولى. كان المكان يحتفظ بتفاصيل صغيرة لا ينتبه إليها العابرون؛ ضوء يتسلل من زاوية بعيدة، وصوت متكرر يأتي ثم ينقطع، وأثر لا يشبه ما اعتاداه. وصل نور وحنان إلى هناك وكل منهما يحمل تصورًا مختلفًا عمّا ينتظرهما.`,
- `بدأت الحكاية بتفصيلة بدت بسيطة، لكنها لم تترك لنور وحنان فرصة لتجاهلها. كان كل شيء حولهما يسير بإيقاع مألوف، إلى أن ظهرت علامة قلبت ترتيب اليوم ودفعت الأسئلة إلى الواجهة. لم يتسرعا في الحكم، بل قررا أن يفهما ما يحدث أولًا.`,
- `حين التقيا في ذلك المكان، لم يكن أي منهما يعرف أن الساعات التالية ستغيّر نظرته إلى ما حوله. تبادلا ما يعرفانه، ثم عادا إلى التفاصيل من البداية. كانت هناك فجوة بين ما يبدو صحيحًا وما تقوله الوقائع، وهذه الفجوة أصبحت نقطة انطلاقهما.`
- ];
- const middle=[
- `لاحظ نور أن ${description} لم يكن أمرًا منفصلًا عن بقية الأحداث؛ فهناك تفصيلة تتكرر كلما اقتربا من الإجابة. أشار إليها بهدوء، وطلب من حنان أن تنظر إلى المشهد من زاوية أخرى. لم تقتنع فورًا، لكنها أعادت ترتيب ما شاهدته، فظهرت أمامها احتمالية لم تخطر لها من قبل.`,
- `أما حنان فاختارت ألا تعتمد على الانطباع الأول. سألت أسئلة محددة، وقارنت بين ما سمعته وما رأته بنفسها. كان نور يميل إلى التحرك بسرعة، بينما كانت تفضّل التثبت قبل اتخاذ القرار. لم يكن اختلافهما عائقًا؛ بل جعل كل واحد منهما يرى جانبًا غاب عن الآخر.`,
- `لم تكن العقبة في صعوبة الطريق وحدها، بل في أن المعلومات المتاحة لم تكن كاملة. كلما اقتربا من تفسير، ظهرت معلومة تحتاج إلى مراجعة. اتفقا على تقسيم المهمة: يتابع نور الأثر الواضح، وتفحص حنان التفاصيل التي تبدو هامشية. وبعد وقت قصير، بدأ الخيطان يلتقيان.`
- ];
- const tension=[
- `عندها حدث ما لم يتوقعاه: ظهرت علامة جديدة في موضع لم يكن موجودًا قبل قليل. توقفا للحظة، لا خوفًا بل لأنهما أدركا أن ما يجري يتغير مع كل خطوة. كان عليهما أن يقررا هل يتابعان الخطة أم يعيدان التفكير فيها. اختارا التمهل، وجمعا الأدلة قبل أي حركة أخرى.`,
- `في منتصف المحاولة، اصطدما بمشكلة أربكت حساباتهما. بدا الحل الأول منطقيًا، لكنه لم يفسر كل شيء. اقترح نور تجربة مختلفة، وأضافت حنان شرطًا يحميهما من الوقوع في الاستنتاج نفسه. أعادا المحاولة، وهذه المرة ظهرت نتيجة صغيرة لكنها حقيقية، فتغير اتجاه البحث.`,
- `تبادلا نظرة قصيرة عندما أدركا أن الأمر أكبر من مصادفة عابرة. لم يكن أمامهما وقت لإضاعة الجهد في التخمين؛ لذلك عادا إلى الوقائع، واستبعدا كل احتمال لا تدعمه علامة واضحة. شيئًا فشيئًا، بدأت الصورة تتماسك، وإن بقي جزء مهم غامضًا.`
- ];
- const dialogue=[
- `قال نور: «لو اتبعنا أول تفسير، سنفوت شيئًا مهمًا». أجابته حنان: «إذن لنبحث عن الدليل الذي يمكن أن يثبت العكس أيضًا». أعجبه اقتراحها، وبدأا يفحصان الاحتمالات واحدًا بعد الآخر. لم يكن الحوار طويلًا، لكنه أعاد إليهما التركيز ومنحهما خطة يمكن اختبارها.`,
- `سألت حنان: «ما الشيء الذي نعرفه بالتأكيد؟» فكر نور قليلًا ثم ذكر ثلاث ملاحظات واضحة. كتبتها حنان بالترتيب، وأضافت بجانب كل واحدة ما لا يمكن الجزم به بعد. بدت الطريقة بسيطة، لكنها منعت أفكارهما من التحول إلى سلسلة تخمينات لا تنتهي.`,
- `قالت حنان وهي تشير إلى التفصيلة الجديدة: «ربما كنا ننظر إلى السؤال من الجهة الخطأ». ابتسم نور وقال: «فلنجرب طريقتك هذه المرة». لم يكن أي منهما يبحث عن إثبات أنه على صواب؛ كان هدفهما أن يصلا إلى فهم أفضل، وهذا ما جعل التعاون بينهما ممكنًا.`
- ];
- const endings=isLast?[
- `وعندما جمعا ما توصلا إليه، اتضحت النتيجة أخيرًا. لم تختفِ كل الأسئلة من العالم، لكن السؤال الذي بدأت منه الحكاية وجد إجابته، وفهم نور وحنان لماذا كانت التفاصيل الصغيرة مهمة إلى هذا الحد. عادا من التجربة أكثر معرفة وثقة بقدرتهما على مواجهة المجهول.`,
- `مع آخر خطوة، انكشف المعنى الذي ظل مختبئًا خلف الأحداث. نظر كل منهما إلى الطريق الذي قطعه، واكتشفا أن أهم ما تغير لم يكن المكان أو المهمة، بل طريقتهما في التفكير والتعاون. انتهت المغامرة كما ينبغي لها، وتركت ذكرى تستحق أن تُروى من جديد.`,
- `لم تكن النهاية صاخبة، لكنها كانت واضحة وصادقة. رتّب نور وحنان ما حدث، واعترفا بما أخطآ في فهمه، واحتفظا بما تعلماه. ثم افترق الطريق أمامهما إلى أيام جديدة، لكنهما عرفا أن التجربة ستظل علامة فارقة في حكايتهما.`
- ]:[
- `وقبل أن يطمئنا إلى أن الأمور أصبحت مفهومة، ظهرت إشارة أخرى لم تكن ضمن حساباتهما. لم تكن كافية لحل اللغز، لكنها أثبتت أن ما توصلا إليه ليس سوى جزء من الصورة. احتفظا بما جمعاه، واتفقا على العودة إلى النقطة نفسها في بداية الخطوة التالية.`,
- `ظنا أن المهمة شارفت على نهايتها، لكن تفصيلة أخيرة جعلتهما يعيدان النظر في كل شيء. لم تكن الإجابة التي وصلا إليها خاطئة تمامًا؛ كانت ناقصة فقط. تبادلا الملاحظات، ثم قررا ألا يتركا هذا الخيط قبل أن يعرفا إلى أين يقود.`,
- `وحين بدا أن الطريق أصبح واضحًا، وصلهما ما قلب توقعاتهما مرة أخرى. لم يتراجعا، لكنهما أدركا أن عليهما الاستعداد لاحتمال جديد. انتهى اليوم بسؤال أكبر من السؤال الأول، وبقرار مشترك أن يكملا البحث مهما احتاج الأمر من صبر.`
- ];
- const pick=(a,offset=0)=>a[(index+offset)%a.length];
- const paragraphs=[pick(openings),
- `كان عنوان هذا الجزء «${chapterTitle}»، وكانت مهمته أن ينقل الحكاية خطوة حقيقية إلى الأمام. لم يكتفِ نور وحنان بوصف ما يريان؛ بل حاولا فهم أثره على الأشخاص والأماكن والقرارات المحيطة به. وكلما ظهرت معلومة جديدة، عادا إلى ملخص الحكاية ليتأكدا أن الأحداث ما زالت تسير في اتجاهها الأساسي: ${summary}`,
- pick(middle,0),pick(middle,1),pick(tension,0),pick(dialogue,0),
- `عادا إلى وصف المهمة مرة أخرى: ${description}. هذه المرة لم يتعاملا معه كجملة عابرة، بل حوّلاه إلى خطوات واضحة. فحصا ما يمكن فحصه، وتحدثا مع من يمكنه إضافة معلومة، وانتظرا قبل اتخاذ قرار قد يصعب التراجع عنه. كانت التفاصيل تتجمع ببطء، لكن كل تفصيلة كانت تضيف معنى جديدًا لما سبقها.`,
- pick(endings,0)];
- if(hint) paragraphs.splice(2,0,`وكانت هناك ملاحظة إضافية لا يريدان إغفالها: ${hint}. ناقشا كيف يمكن أن تؤثر في مجرى الأحداث من دون أن تبتعد الحكاية عن فكرتها الأصلية. اتفقا على الاحتفاظ بها كجزء من خطتهما، ثم تابعا ما بدأاه بعين أكثر انتباهًا.`);
- return paragraphs.join('\n\n');
-}
-
-async function createRandom(){
-  const button=document.querySelector('#randomForm button.primary');
-  const genre=document.getElementById('genre').value;
-  const n=countVal('randomCount');
-  const hint=document.getElementById('randomHint').value.trim();
-  const style=document.getElementById('style').value;
-  setGenerating(button,true);
-  try{
-    const raw=await requestAI({
-      mode:'random',chapters:n,genre,style,hint
-    });
-    const titleMatch=raw.match(/عنوان القصة\s*[:：]\s*([^\n]+)/);
-    const summaryMatch=raw.match(/وصف القصة\s*[:：]\s*([^\n]+)/);
-    const title=titleMatch?.[1]?.trim() || 'حكاية من عالم جديد';
-    const summary=summaryMatch?.[1]?.trim() || hint || 'قصة جديدة ألّفها الذكاء الاصطناعي.';
-    const s=parseGeneratedStory(raw,title,summary,genre,style,n);
-    stories.unshift(s);save();openStory(s.id);toast('اكتملت قصتك بالذكاء الاصطناعي');
-  }catch(e){
-    toast(e.message || 'حدث خطأ أثناء إنشاء القصة');
-  }finally{setGenerating(button,false,'اصنع حكايتي ✨');}
-}
-
-async function createCustom(){
-  const button=document.querySelector('#customForm button.primary');
-  const title=document.getElementById('customTitle').value.trim();
-  const summary=document.getElementById('customSummary').value.trim();
-  if(!title||!summary){toast('اكتب عنوان القصة وملخصها أولًا');return}
-  const n=countVal('customCount');
-  const rows=[...document.querySelectorAll('#chapterInputs .chapter-row')];
-  const chapterTitles=rows.map(r=>r.querySelector('input').value.trim());
-  const descriptions=rows.map(r=>r.querySelector('textarea').value.trim());
-  if(chapterTitles.some((x,i)=>!x||!descriptions[i])){
-    toast('أكمل عنوان ووصف كل فصل');return;
+async function generateStory(){
+  if(busy)return;
+  const idea=document.getElementById("storyIdea").value.trim();
+  if(mode==="custom"&&!idea){
+    toast("اكتب فكرة القصة أولًا.");
+    document.getElementById("storyIdea").focus();
+    return;
   }
-  const genre=document.getElementById('customGenre').value;
-  const style=document.getElementById('customStyle').value;
-  const chapterDescriptions=chapterTitles.map((t,i)=>`${t}: ${descriptions[i]}`);
-  setGenerating(button,true);
-  try{
-    const raw=await requestAI({
-      mode:'custom',title,idea:summary,chapters:n,genre,style,chapterDescriptions
-    });
-    const s=parseGeneratedStory(raw,title,summary,genre,style,n);
-    stories.unshift(s);save();openStory(s.id);toast('حوّل الذكاء الاصطناعي فكرتك إلى قصة');
-  }catch(e){
-    toast(e.message || 'حدث خطأ أثناء إنشاء القصة');
-  }finally{setGenerating(button,false,'حوّل فكرتي إلى قصة ✨');}
-}
+  const count=Number(document.getElementById("chapterCount").value);
+  const title=document.getElementById("storyTitle").value.trim();
+  const genre=document.getElementById("genre").value;
+  const style=document.getElementById("style").value;
+  const hint=document.getElementById("hint").value.trim();
+  const chapterDescriptions=[...document.querySelectorAll("#chapterHints input")].map(x=>x.value.trim());
 
-function renderLists(){const make=(arr)=>arr.length?arr.map(s=>`<div class="story-item"><div class="story-cover">📖</div><div class="story-info"><span class="pill">${esc(s.genre)}</span><h3>${esc(s.title)}</h3><p>${s.chapters.length} فصول · ${new Date(s.created).toLocaleDateString('ar-EG')}</p><p>${esc(s.summary).slice(0,100)}</p></div><div><button class="icon-btn" title="المفضلة" onclick="toggleFav('${s.id}')">${s.favorite?'♥':'♡'}</button><button class="icon-btn" onclick="openStory('${s.id}')">اقرأ</button><button class="icon-btn" onclick="editStory('${s.id}')">تعديل</button><button class="icon-btn" onclick="deleteStory('${s.id}')">حذف</button></div></div>`).join(''):'<div class="empty">لا توجد قصص هنا بعد. ابدأ حكايتك الأولى ✨</div>';document.getElementById('libraryStories').innerHTML=make(stories);document.getElementById('favoriteStories').innerHTML=make(stories.filter(s=>s.favorite));document.getElementById('recentStories').innerHTML=make(stories.slice(0,3));document.getElementById('libraryCount').textContent=`${stories.length} قصة`}
-function toggleFav(id){let s=stories.find(x=>x.id===id);s.favorite=!s.favorite;save();toast(s.favorite?'أضيفت للمفضلة':'أزيلت من المفضلة')}
-function deleteStory(id){if(!confirm('هل تريد حذف هذه القصة نهائيًا؟'))return;stories=stories.filter(s=>s.id!==id);save();toast('تم حذف القصة')}
-function openStory(id){currentStory=stories.find(s=>s.id===id);if(!currentStory)return;currentChapter=Math.min(currentStory.last||0,currentStory.chapters.length-1);renderReader();showPage('reader')}
-function renderReader(){let s=currentStory,c=s.chapters[currentChapter];s.last=currentChapter;save();document.getElementById('readerContent').innerHTML=`<span class="pill">${esc(s.genre)} · الفصل ${currentChapter+1} من ${s.chapters.length}</span><h1>${esc(s.title)}</h1><p class="muted">${esc(s.summary)}</p><div class="scene">✦ 📖 ✦</div><h2>${esc(c.title)}</h2><div class="prose">${esc(c.content||c.description)}</div><div class="reader-nav"><button class="secondary" ${currentChapter===0?'disabled':''} onclick="moveChapter(-1)">الفصل السابق</button><button class="primary" onclick="moveChapter(1)">${currentChapter===s.chapters.length-1?'إنهاء القراءة':'الفصل التالي'}</button></div><div class="actions"><button class="secondary" onclick="toggleFav('${s.id}')">${s.favorite?'♥ إزالة من المفضلة':'♡ أضف للمفضلة'}</button><button class="secondary" onclick="editStory('${s.id}')">تعديل القصة</button></div>`}
-function moveChapter(d){if(currentChapter+d>=currentStory.chapters.length){currentStory.status='مكتملة';save();toast('أكملت القصة!');showPage('library');return}currentChapter=Math.max(0,currentChapter+d);currentStory.last=currentChapter;renderReader()}
-function editStory(id){editingId=id;let s=stories.find(x=>x.id===id);document.getElementById('editTitle').value=s.title;document.getElementById('editSummary').value=s.summary;let box=document.getElementById('editChapters');box.innerHTML='';s.chapters.forEach((c,i)=>{let d=document.createElement('div');d.className='chapter-row';d.innerHTML=`<b>الفصل ${i+1}</b><label>العنوان</label><input class="et" value="${esc(c.title)}"><label>النص</label><textarea class="ec">${esc(c.content||c.description)}</textarea>`;box.appendChild(d)});document.getElementById('editModal').classList.add('show')}
-function closeEdit(){document.getElementById('editModal').classList.remove('show')}
-function saveEdit(){let s=stories.find(x=>x.id===editingId);s.title=document.getElementById('editTitle').value.trim()||s.title;s.summary=document.getElementById('editSummary').value;let rows=[...document.querySelectorAll('#editChapters .chapter-row')];rows.forEach((r,i)=>{s.chapters[i].title=r.querySelector('.et').value;s.chapters[i].content=r.querySelector('.ec').value});save();closeEdit();if(currentStory?.id===s.id)renderReader();toast('تم حفظ التعديلات')}
-function exportData(){let blob=new Blob([JSON.stringify(stories,null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='qissaty-backup.json';a.click();URL.revokeObjectURL(a.href)}
-function importData(e){let f=e.target.files[0];if(!f)return;let r=new FileReader();r.onload=()=>{try{let d=JSON.parse(r.result);if(!Array.isArray(d))throw 0;stories=d;save();toast('تم استيراد النسخة')}catch(_){toast('ملف النسخة غير صالح')}};r.readAsText(f)}
-function clearAll(){if(confirm('سيتم حذف جميع القصص المحفوظة على هذا الجهاز. هل أنت متأكد؟')){stories=[];save();toast('تم حذف البيانات')}}
-renderChapterInputs();renderLists();
-</script></body></html>
+  busy=true;
+  const button=document.getElementById("generateBtn");
+  button.disabled=true;
+  button.textContent="جارٍ تأليف الحكاية...";
+  let created=null;
+
+  try{
+    setProgress(3,"نرسم عالم القصة ونبني مخطط الأحداث...",0,count);
+
+    const outlineData=await post("/outline",{
+      mode,title,idea,genre,style,chapters:count,hint,chapterDescriptions
+    });
+
+    created={
+      id:id(),
+      title:outlineData.title||title||"حكاية جديدة",
+      summary:outlineData.summary||idea,
+      genre,style,
+      outline:outlineData.outline,
+      chapters:[],
+      favorite:false,
+      createdAt:new Date().toISOString()
+    };
+
+    for(let i=1;i<=count;i++){
+      const percent=5+((i-1)/count)*90;
+      setProgress(percent,`نكتب الفصل ${i} من ${count}...`,i,count);
+
+      const result=await post("/chapter",{
+        number:i,
+        chapters:count,
+        title:created.title,
+        summary:created.summary,
+        genre,style,
+        outline:created.outline,
+        hint,
+        chapterDescription:chapterDescriptions[i-1]||"",
+        previousSummaries:created.chapters.map(c=>c.summary)
+      });
+
+      created.chapters.push({
+        title:extractChapterTitle(result.chapter,i),
+        content:result.chapter,
+        summary:result.summary||result.chapter.slice(0,1000)
+      });
+
+      setProgress(5+(i/count)*90,`اكتمل الفصل ${i} من ${count}.`,i+1,count);
+    }
+
+    stories.push(created);
+    saveStories();
+    setProgress(100,"اكتملت الحكاية! تم حفظها في مكتبتك.",count+1,count);
+    toast("اكتملت قصتك بنجاح!");
+    setTimeout(()=>openStory(created.id),700);
+
+  }catch(error){
+    console.error(error);
+    if(created&&created.chapters.length){
+      stories.push(created);
+      saveStories();
+      toast("حُفظت الفصول المكتملة. حدث خطأ أثناء المتابعة.");
+    }else{
+      toast("تعذر إنشاء القصة: "+error.message);
+    }
+    document.getElementById("progressStatus").textContent=
+      "توقف التوليد: "+error.message+
+      (created&&created.chapters.length?" — تم حفظ ما كُتب حتى الآن.":"");
+  }finally{
+    busy=false;
+    button.disabled=false;
+    button.textContent="✦ ابدأ تأليف القصة";
+  }
+}
+function extractChapterTitle(text,number){
+  const match=String(text).match(/عنوان الفصل\s*[:：]\s*([^\n]+)/);
+  return match?match[1].trim():`الفصل ${number}`;
+}
+function openStory(storyId){
+  const story=stories.find(s=>s.id===storyId);
+  if(!story)return;
+  currentStoryId=storyId;
+  document.getElementById("readerContent").innerHTML=`
+    <div class="reader-title">${escapeHTML(story.title)}</div>
+    <div class="reader-summary">${escapeHTML(story.summary||"")}</div>
+    ${(story.chapters||[]).map((chapter,i)=>`
+      <article class="chapter">
+        <h3>${escapeHTML(chapter.title||"الفصل "+(i+1))}</h3>
+        ${escapeHTML(chapter.content||"").replace(/\n/g,"<br>")}
+      </article>
+    `).join("")}
+  `;
+  document.getElementById("reader").classList.remove("hidden");
+  document.body.style.overflow="hidden";
+}
+function closeReader(){
+  document.getElementById("reader").classList.add("hidden");
+  document.body.style.overflow="";
+}
+function toggleFavorite(storyId){
+  const story=stories.find(s=>s.id===storyId);
+  if(!story)return;
+  story.favorite=!story.favorite;
+  saveStories();
+  renderStories();
+  toast(story.favorite?"أُضيفت للمفضلة":"أُزيلت من المفضلة");
+}
+function toggleCurrentFavorite(){
+  if(currentStoryId)toggleFavorite(currentStoryId);
+}
+function deleteStory(storyId){
+  if(!confirm("هل تريد حذف هذه القصة نهائيًا من مكتبتك؟"))return;
+  stories=stories.filter(s=>s.id!==storyId);
+  saveStories();
+  renderStories();
+  toast("تم حذف القصة.");
+}
+function editStory(storyId){
+  const story=stories.find(s=>s.id===storyId);
+  if(!story)return;
+  editingStoryId=storyId;
+  document.getElementById("editTitle").value=story.title||"";
+  document.getElementById("editSummary").value=story.summary||"";
+  document.getElementById("editBody").value=(story.chapters||[]).map((c,i)=>
+    `الفصل ${i+1}: ${c.title||""}\n${c.content||""}`
+  ).join("\n\n--------------------\n\n");
+  document.getElementById("editModal").classList.remove("hidden");
+}
+function closeEdit(){
+  document.getElementById("editModal").classList.add("hidden");
+}
+function saveEdit(){
+  const story=stories.find(s=>s.id===editingStoryId);
+  if(!story)return;
+  story.title=document.getElementById("editTitle").value.trim()||"حكاية بلا عنوان";
+  story.summary=document.getElementById("editSummary").value.trim();
+  const body=document.getElementById("editBody").value;
+  story.editedText=body;
+  saveStories();
+  closeEdit();
+  renderStories();
+  toast("تم حفظ التعديلات.");
+}
+function storyText(story){
+  if(story.editedText)return `${story.title}\n\n${story.summary}\n\n${story.editedText}`;
+  return `${story.title}\n\n${story.summary}\n\n`+(story.chapters||[]).map((c,i)=>
+    `${c.title||"الفصل "+(i+1)}\n\n${c.content}`
+  ).join("\n\n");
+}
+function downloadText(filename,content,type="text/plain"){
+  const blob=new Blob([content],{type:type+";charset=utf-8"});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement("a");
+  a.href=url;a.download=filename;a.click();
+  URL.revokeObjectURL(url);
+}
+function downloadStory(storyId){
+  const story=stories.find(s=>s.id===storyId);
+  if(story)downloadText((story.title||"qissaty").replace(/[\\/:*?"<>|]/g,"_")+".txt",storyText(story));
+}
+function downloadCurrent(){
+  if(currentStoryId)downloadStory(currentStoryId);
+}
+function exportLibrary(){
+  downloadText("Qissaty-library.json",JSON.stringify(stories,null,2),"application/json");
+  toast("تم تجهيز نسخة من مكتبتك.");
+}
+document.getElementById("importFile").addEventListener("change",async event=>{
+  const file=event.target.files[0];
+  if(!file)return;
+  try{
+    const imported=JSON.parse(await file.text());
+    if(!Array.isArray(imported))throw new Error("الملف غير صالح.");
+    const normalized=imported.filter(s=>s&&typeof s==="object").map(s=>({
+      ...s,id:s.id||id(),chapters:Array.isArray(s.chapters)?s.chapters:[]
+    }));
+    const existing=new Set(stories.map(s=>s.id));
+    for(const story of normalized){
+      if(!existing.has(story.id))stories.push(story);
+    }
+    saveStories();
+    renderStories();
+    toast("تم استيراد القصص.");
+  }catch(e){toast("تعذر استيراد الملف.");}
+  event.target.value="";
+});
+function importLibrary(){
+  document.getElementById("importFile").click();
+}
+updateStats();
+</script>
+</body>
+</html>
