@@ -411,7 +411,6 @@ function toast(message){
 }
 
 async function post(endpoint, payload) {
-async function post(endpoint, payload) {
   let response;
 
   try {
@@ -438,9 +437,7 @@ async function post(endpoint, payload) {
   } catch (error) {
     throw new Error(
       "استجابة غير صالحة من الخادم. HTTP " +
-      response.status +
-      " | " +
-      raw.slice(0, 500)
+      response.status + " | " + raw.slice(0, 500)
     );
   }
 
@@ -453,7 +450,7 @@ async function post(endpoint, payload) {
   }
 
   return data;
-}
+  }
 
 function selectedMode(){
  return document.querySelector('input[name="mode"]:checked')?.value||"custom";
