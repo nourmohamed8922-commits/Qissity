@@ -411,6 +411,7 @@ function toast(message){
 }
 
 async function post(endpoint, payload) {
+async function post(endpoint, payload) {
   let response;
 
   try {
@@ -424,19 +425,19 @@ async function post(endpoint, payload) {
     });
   } catch (error) {
     throw new Error(
-      "تعذر الاتصال بالخادم: " + (error.message || "تحقق من الإنترنت")
+      "تعذر الاتصال بالخادم: " +
+      (error.message || "تحقق من الإنترنت")
     );
   }
 
   const raw = await response.text();
-
   let data;
 
   try {
     data = JSON.parse(raw);
   } catch (error) {
     throw new Error(
-      "استجابة غير صالحة من المحرك. HTTP " +
+      "استجابة غير صالحة من الخادم. HTTP " +
       response.status +
       " | " +
       raw.slice(0, 500)
@@ -447,29 +448,11 @@ async function post(endpoint, payload) {
     throw new Error(
       data.message ||
       data.error ||
-      "خطأ من المحرك. HTTP " + response.status
+      "حدث خطأ أثناء إنشاء القصة. HTTP " + response.status
     );
   }
 
   return data;
- }
- const response=await fetch(API+endpoint,{
-  method:"POST",
-  headers:{"Content-Type":"application/json"},
-  body:JSON.stringify(payload)
- });
-
- let data;
- try{
-  data=await response.json();
- }catch(e){
-  throw new Error("الخادم أرسل استجابة غير مفهومة.");
- }
-
- if(!response.ok||data.success===false){
-  throw new Error(data.error||data.message||"حدث خطأ أثناء إنشاء القصة.");
- }
- return data;
 }
 
 function selectedMode(){
