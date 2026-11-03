@@ -8,6 +8,7 @@
 <title>قصتي | اصنع عالمك بالكلمات</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
 <style>
 :root{
  --bg:#100e1c;--panel:#191629;--panel2:#211d34;--gold:#e8c77b;
@@ -16,15 +17,29 @@
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:radial-gradient(ellipse at 50% -20%,#34264b 0%,transparent 55%),var(--bg);color:var(--text);font-family:Cairo,sans-serif;min-height:100vh}
+body{
+ margin:0;background:radial-gradient(ellipse at 50% -20%,#34264b 0%,transparent 55%),var(--bg);
+ color:var(--text);font-family:Cairo,sans-serif;min-height:100vh
+}
 button,input,textarea,select{font:inherit}
 button{cursor:pointer}
 button:disabled{opacity:.45;cursor:not-allowed}
-.topbar{height:70px;border-bottom:1px solid #ffffff12;display:flex;align-items:center;justify-content:space-between;padding:0 5%;position:sticky;top:0;z-index:20;background:#100e1ceF;backdrop-filter:blur(16px)}
+.topbar{
+ height:70px;border-bottom:1px solid #ffffff12;display:flex;
+ align-items:center;justify-content:space-between;padding:0 5%;
+ position:sticky;top:0;z-index:20;background:#100e1ceF;backdrop-filter:blur(16px)
+}
 .brand{display:flex;align-items:center;gap:12px;font-weight:900;font-size:22px}
-.brand-icon{width:39px;height:39px;border-radius:13px;background:linear-gradient(135deg,#e8c77b,#98713d);display:grid;place-items:center;color:#21172a;font-size:23px}
+.brand-icon{
+ width:39px;height:39px;border-radius:13px;
+ background:linear-gradient(135deg,#e8c77b,#98713d);
+ display:grid;place-items:center;color:#21172a;font-size:23px
+}
 .top-actions{display:flex;gap:9px;align-items:center}
-.btn{border:1px solid var(--line);background:var(--panel2);color:var(--text);padding:10px 17px;border-radius:12px;font-weight:700;transition:.2s}
+.btn{
+ border:1px solid var(--line);background:var(--panel2);color:var(--text);
+ padding:10px 17px;border-radius:12px;font-weight:700;transition:.2s
+}
 .btn:hover{border-color:var(--gold);transform:translateY(-1px)}
 .btn.primary{background:linear-gradient(135deg,#e8c77b,#b89551);border:0;color:#21172a}
 .btn.ghost{background:transparent}
@@ -40,14 +55,21 @@ main{max-width:1100px;margin:auto;padding:42px 22px 90px}
 .tabs{display:flex;gap:8px;flex-wrap:wrap}
 .tab{border:1px solid var(--line);background:transparent;color:var(--muted);padding:8px 14px;border-radius:10px}
 .tab.active{color:var(--gold);border-color:var(--gold);background:#e8c77b12}
-.creator{background:linear-gradient(145deg,#211d34,#171424);border:1px solid #ffffff17;border-radius:23px;padding:clamp(19px,4vw,34px);box-shadow:0 20px 70px #0002}
+.creator{
+ background:linear-gradient(145deg,#211d34,#171424);
+ border:1px solid #ffffff17;border-radius:23px;
+ padding:clamp(19px,4vw,34px);box-shadow:0 20px 70px #0002
+}
 .creator h2{margin:0 0 6px;font-size:23px}
 .sub{color:var(--muted);font-size:13px;margin:0 0 25px}
 .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:17px}
 .field{display:flex;flex-direction:column;gap:8px}
 .field.full{grid-column:1/-1}
 .field label{font-size:13px;color:#d9d0e8;font-weight:700}
-.field input,.field textarea,.field select{width:100%;border:1px solid var(--line);background:#100e1c;color:var(--text);border-radius:12px;padding:13px 14px;outline:none}
+.field input,.field textarea,.field select{
+ width:100%;border:1px solid var(--line);background:#100e1c;
+ color:var(--text);border-radius:12px;padding:13px 14px;outline:none
+}
 .field input:focus,.field textarea:focus,.field select:focus{border-color:var(--gold)}
 .field textarea{min-height:105px;resize:vertical;line-height:1.9}
 .field select{appearance:auto}
@@ -55,7 +77,10 @@ main{max-width:1100px;margin:auto;padding:42px 22px 90px}
 .choice-row{display:flex;flex-wrap:wrap;gap:8px}
 .choice{position:relative}
 .choice input{position:absolute;opacity:0;pointer-events:none}
-.choice span{display:block;border:1px solid var(--line);padding:9px 13px;border-radius:10px;color:var(--muted);font-size:13px;cursor:pointer}
+.choice span{
+ display:block;border:1px solid var(--line);padding:9px 13px;
+ border-radius:10px;color:var(--muted);font-size:13px;cursor:pointer
+}
 .choice input:checked+span{border-color:var(--gold);color:var(--gold);background:#e8c77b12}
 .generate-row{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-top:23px;flex-wrap:wrap}
 .generate-row .btn{padding:13px 24px}
@@ -67,9 +92,17 @@ main{max-width:1100px;margin:auto;padding:42px 22px 90px}
 .status-note{font-size:12px;color:var(--muted);margin-top:9px;line-height:1.8}
 .library{margin-top:65px}
 .library-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(245px,1fr));gap:15px}
-.story-card{background:linear-gradient(145deg,#211d34,#171424);border:1px solid #ffffff14;border-radius:17px;padding:19px;min-width:0;transition:.2s}
+.story-card{
+ background:linear-gradient(145deg,#211d34,#171424);
+ border:1px solid #ffffff14;border-radius:17px;padding:19px;
+ min-width:0;transition:.2s
+}
 .story-card:hover{transform:translateY(-3px);border-color:#b8955166}
-.story-symbol{width:42px;height:42px;display:grid;place-items:center;background:#e8c77b14;color:var(--gold);border-radius:13px;font-size:21px;margin-bottom:14px}
+.story-symbol{
+ width:42px;height:42px;display:grid;place-items:center;
+ background:#e8c77b14;color:var(--gold);border-radius:13px;
+ font-size:21px;margin-bottom:14px
+}
 .story-card h3{font-family:Amiri,serif;font-size:23px;margin:0 0 7px;overflow-wrap:anywhere}
 .story-card p{color:var(--muted);font-size:12px;line-height:1.9;margin:0 0 14px;min-height:45px}
 .card-meta{font-size:11px;color:var(--muted);display:flex;justify-content:space-between;gap:8px;margin-bottom:14px}
@@ -81,7 +114,10 @@ footer{text-align:center;color:#777186;font-size:11px;padding:25px}
 .overlay{position:fixed;inset:0;background:#080711eF;z-index:50;display:none;overflow:auto;padding:20px}
 .overlay.open{display:block}
 .reader{max-width:850px;margin:20px auto;background:#171424;border:1px solid var(--line);border-radius:20px;overflow:hidden}
-.reader-head{padding:23px 25px;background:linear-gradient(130deg,#29213c,#191629);position:sticky;top:0;z-index:3;border-bottom:1px solid var(--line)}
+.reader-head{
+ padding:23px 25px;background:linear-gradient(130deg,#29213c,#191629);
+ position:sticky;top:0;z-index:3;border-bottom:1px solid var(--line)
+}
 .reader-top{display:flex;justify-content:space-between;gap:12px;align-items:center}
 .reader-top h2{font-family:Amiri,serif;font-size:29px;margin:0}
 .reader-close{background:#ffffff12;border:1px solid var(--line);color:white;border-radius:10px;width:39px;height:39px;font-size:20px}
@@ -100,19 +136,32 @@ footer{text-align:center;color:#777186;font-size:11px;padding:25px}
 .modal-box h3{margin-top:0}
 .modal-box textarea{width:100%;min-height:270px;background:#100e1c;color:white;border:1px solid var(--line);border-radius:12px;padding:14px;line-height:1.9}
 .modal-actions{display:flex;gap:9px;justify-content:flex-end;margin-top:13px;flex-wrap:wrap}
-.toast{position:fixed;bottom:22px;left:50%;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:#29233b;border:1px solid var(--line);border-radius:12px;padding:12px 19px;z-index:100;transition:.25s;font-size:13px;max-width:90%;text-align:center}
+.toast{
+ position:fixed;bottom:22px;left:50%;transform:translate(-50%,20px);
+ opacity:0;pointer-events:none;background:#29233b;border:1px solid var(--line);
+ border-radius:12px;padding:12px 19px;z-index:100;transition:.25s;
+ font-size:13px;max-width:90%;text-align:center
+}
 .toast.show{opacity:1;transform:translate(-50%,0)}
 .hidden{display:none!important}
 @media(max-width:650px){
- .topbar{padding:0 15px;height:62px}.brand{font-size:19px}.top-actions .btn{padding:8px 10px;font-size:11px}
- main{padding:20px 14px 60px}.hero{padding:35px 5px 38px}
- .form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}
+ .topbar{padding:0 15px;height:62px}
+ .brand{font-size:19px}
+ .top-actions .btn{padding:8px 10px;font-size:11px}
+ main{padding:20px 14px 60px}
+ .hero{padding:35px 5px 38px}
+ .form-grid{grid-template-columns:1fr}
+ .field.full{grid-column:auto}
  .section-head{align-items:flex-start;flex-direction:column}
- .reader-head{padding:15px}.reader-top h2{font-size:23px}
- .chapter{padding:28px 0 35px}.chapter h3{font-size:27px}.chapter-content{font-size:19px}
+ .reader-head{padding:15px}
+ .reader-top h2{font-size:23px}
+ .chapter{padding:28px 0 35px}
+ .chapter h3{font-size:27px}
+ .chapter-content{font-size:19px}
 }
 </style>
 </head>
+
 <body>
 <header class="topbar">
  <div class="brand"><div class="brand-icon">ق</div><span>قصتي</span></div>
@@ -133,6 +182,7 @@ footer{text-align:center;color:#777186;font-size:11px;padding:25px}
  <section class="creator" id="creator">
   <h2>ابدأ حكايتك الجديدة</h2>
   <p class="sub">اختر عالمك، واترك الباقي لخيالك والذكاء الاصطناعي.</p>
+
   <div class="form-grid">
    <div class="field full">
     <label>طريقة إنشاء القصة</label>
@@ -141,21 +191,24 @@ footer{text-align:center;color:#777186;font-size:11px;padding:25px}
      <label class="choice"><input type="radio" name="mode" value="random"><span>فاجئني بقصة</span></label>
     </div>
    </div>
+
    <div class="field full" id="ideaField">
     <label for="idea">فكرة القصة</label>
     <textarea id="idea" placeholder="اكتب فكرتك حتى لو كانت مجرد جملة صغيرة..."></textarea>
    </div>
+
    <div class="field">
     <label for="title">عنوان القصة (اختياري)</label>
     <input id="title" maxlength="90" placeholder="اسم الحكاية">
    </div>
+
    <div class="field">
     <label for="genre">نوع القصة</label>
     <select id="genre">
      <option value="فانتازيا ومغامرة">فانتازيا ومغامرة</option>
      <option value="غموض وألغاز">غموض وألغاز</option>
      <option value="خيال علمي">خيال علمي</option>
-     <option value="رومانسية أدبية">رومانسية أدبية</option>
+     <option value="رومانسية">رومانسية</option>
      <option value="دراما اجتماعية">دراما اجتماعية</option>
      <option value="رعب نفسي">رعب نفسي</option>
      <option value="حكايات للأطفال">حكايات للأطفال</option>
@@ -163,16 +216,7 @@ footer{text-align:center;color:#777186;font-size:11px;padding:25px}
      <option value="كوميديا">كوميديا</option>
     </select>
    </div>
-   <div class="field">
-    <label for="style">أسلوب الكتابة</label>
-    <select id="style">
-     <option value="أدبي سينمائي غني بالتفاصيل">أدبي سينمائي</option>
-     <option value="بسيط وسلس وممتع">بسيط وسلس</option>
-     <option value="شاعري وعاطفي">شاعري وعاطفي</option>
-     <option value="مشوق وسريع الإيقاع">مشوق وسريع</option>
-     <option value="ملحمي وعميق">ملحمي وعميق</option>
-    </select>
-   </div>
+
    <div class="field">
     <label for="chaptersCount">عدد الفصول</label>
     <select id="chaptersCount">
@@ -188,15 +232,18 @@ footer{text-align:center;color:#777186;font-size:11px;padding:25px}
      <option value="10">10 فصول</option>
     </select>
    </div>
+
    <div class="field">
     <label for="hint">تفصيل إضافي (اختياري)</label>
     <input id="hint" placeholder="مثلاً: نهاية غير متوقعة، عالم قديم...">
    </div>
   </div>
+
   <div class="generate-row">
    <span class="hint">سيتم إنشاء مخطط مترابط ثم كتابة كل فصل على حدة.</span>
    <button class="btn primary" id="generateBtn">✦ أنشئ قصتي</button>
   </div>
+
   <div class="status" id="status">
    <div class="status-title"><strong id="statusTitle">نجهز عالم القصة...</strong><span id="statusPercent">0%</span></div>
    <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
@@ -215,14 +262,21 @@ footer{text-align:center;color:#777186;font-size:11px;padding:25px}
   <div class="library-grid" id="storyGrid"></div>
  </section>
 </main>
+
 <footer>قصتي — مساحة صغيرة لخيال لا ينتهي ✦</footer>
 
 <div class="overlay" id="readerOverlay">
  <div class="reader">
   <div class="reader-head">
-   <div class="reader-top"><h2 id="readerTitle">عنوان القصة</h2><button class="reader-close" id="closeReader" aria-label="إغلاق">×</button></div>
+   <div class="reader-top">
+    <h2 id="readerTitle">عنوان القصة</h2>
+    <button class="reader-close" id="closeReader" aria-label="إغلاق">×</button>
+   </div>
    <p class="reader-summary" id="readerSummary"></p>
-   <div class="reader-progress"><span id="readerProgressText">الفصل ١ من ٥</span><span id="readerProgressPct">0%</span></div>
+   <div class="reader-progress">
+    <span id="readerProgressText">الفصل ١ من ٥</span>
+    <span id="readerProgressPct">0%</span>
+   </div>
    <div class="progress-track"><div class="progress-fill" id="readerProgressFill"></div></div>
   </div>
   <div class="reader-body" id="readerBody"></div>
@@ -240,957 +294,639 @@ footer{text-align:center;color:#777186;font-size:11px;padding:25px}
   </div>
  </div>
 </div>
+
 <div class="toast" id="toast"></div>
 
-
+<script>
 "use strict";
 
-const API = "https://qissityai.nourmohamed8922.workers.dev";
-const KEY = "qissaty_stories_v1";
+const API="https://qissityai.nourmohamed8922.workers.dev";
+const KEY="qissaty_stories_v1";
 
-let stories = loadStories();
-let currentFilter = "all";
-let editingId = null;
-let activeStoryId = null;
-let readerTick = false;
+let stories=loadStories();
+let currentFilter="all";
+let editingId=null;
+let activeStoryId=null;
+let readerTick=false;
 
-const $ = id => document.getElementById(id);
-const arabicNumber = n =>
-  String(n).replace(/\d/g, d => "٠١٢٣٤٥٦٧٨٩"[Number(d)]);
-const makeId = () =>
-  Date.now().toString(36) + Math.random().toString(36).slice(2, 8);
+const $=id=>document.getElementById(id);
+const arabicNumber=n=>String(n).replace(/\d/g,d=>"٠١٢٣٤٥٦٧٨٩"[Number(d)]);
+const makeId=()=>Date.now().toString(36)+Math.random().toString(36).slice(2,8);
 
-/* إزالة اختيار أسلوب الكتابة */
-const styleField = $("style")?.closest(".field");
-if (styleField) styleField.remove();
-
-/* تعديل اسم خيار الرومانسية */
-const romanceOption = [...$("genre").options].find(
-  option => option.value === "رومانسية أدبية"
-);
-if (romanceOption) {
-  romanceOption.value = "رومانسية";
-  romanceOption.textContent = "رومانسية";
-}
-
-/* تعليمات خاصة بكل نوع */
-const GENRE_DIRECTIONS = {
-  "رومانسية": `
-اكتب رواية رومانسية حقيقية، وليست نصًا أدبيًا تأمليًا عن الحب.
-اجعل العلاقة العاطفية محور الأحداث.
-اهتم بالانجذاب والتقارب والشوق والغيرة والاشتياق
-والاعترافات والمواقف المحرجة والخلافات والمصالحة.
-اجعل الحوارات طبيعية ومليئة بالشخصية والانفعال.
-لا تجعل الشخصيات تعترف بحبها بسرعة دون بناء العلاقة.
-أظهر تطور العلاقة من خلال الأحداث والتصرفات.
-اكتب مشاهد رومانسية مؤثرة وحيوية، ولا تكتفِ بوصف المشاعر.
-اجعل لكل شخصية رغبات ومخاوف وقرارات تؤثر في العلاقة.
-تجنب المبالغة الشعرية والعبارات المستهلكة.
-يمكن أن تكون الرومانسية جريئة عاطفيًا، مع إبقاء المشاهد الحميمة غير صريحة جنسيًا.
+/* توجيهات إبداعية حسب نوع القصة */
+const GENRE_DIRECTIONS={
+ "رومانسية":`
+اكتب رواية رومانسية حقيقية، واجعل العلاقة العاطفية محور الأحداث.
+لا تكتب نصًا تأمليًا أو خواطر منفصلة عن الأحداث.
+اهتم بالانجذاب والتقارب والشوق والغيرة والاشتياق والاعترافات
+والخلافات والمصالحة واللحظات التي تكشف مشاعر الشخصيات.
+اجعل الحوار طبيعيًا ومتنوعًا ويحمل مشاعر واضحة.
+طوّر العلاقة تدريجيًا، ولا تجعل الحب يحدث بلا أسباب أو تطور.
+اكتب مشاهد حية فيها أحداث ومواقف وقرارات وتغيّرات في العلاقة.
+اجعل الشخصيات مختلفة في الطباع وطريقة الكلام وردود الأفعال.
+استخدم تفاصيل حسية ومكانية وأجواء سينمائية دون إطالة فارغة.
+يمكن أن تكون الرومانسية قوية وجريئة عاطفيًا، لكن دون وصف جنسي صريح.
+تجنب التكرار والمبالغة في عبارات الحب الجاهزة.
 `,
-
-  "فانتازيا ومغامرة": `
-اجعل العالم خياليًا متكاملًا له قواعد وأسرار.
-اهتم بالمغامرة والاستكشاف والمفاجآت وتطور الشخصيات.
-لا تجعل الأحداث مجرد وصف للعالم.
+ "فانتازيا ومغامرة":`
+ابنِ عالمًا خياليًا متكاملًا بقواعد واضحة وأسرار وشخصيات مميزة.
+اجعل المغامرة متصاعدة، وكل حدث يؤدي إلى الحدث الذي يليه.
 `,
-
-  "غموض وألغاز": `
-ازرع أدلة حقيقية وأسرارًا مترابطة.
-لا تكشف الحل مبكرًا، ولا تستخدم حلولًا غير منطقية.
-يجب أن يحصل القارئ على أدلة تساعده على التفكير.
+ "غموض وألغاز":`
+ازرع أدلة حقيقية وتلميحات مبكرة، واجعل كشف الأسرار منطقيًا.
+لا تكشف الحل بسرعة، واجعل القارئ قادرًا على التفكير والتخمين.
 `,
-
-  "خيال علمي": `
-اجعل الفكرة العلمية أو التقنية جزءًا أساسيًا من الحبكة.
-حافظ على منطق العالم وقواعده الداخلية.
-اهتم بالنتائج الإنسانية والاجتماعية للتكنولوجيا.
+ "خيال علمي":`
+ابنِ عالمًا مستقبليًا له قواعد علمية وتقنية متماسكة.
+اجعل الفكرة العلمية جزءًا من الصراع والشخصيات.
 `,
-
-  "دراما اجتماعية": `
-ركز على الشخصيات والعلاقات والصراعات الواقعية.
-اجعل القرارات لها عواقب واضحة.
-تجنب الوعظ المباشر والمواقف المفتعلة.
+ "دراما اجتماعية":`
+اهتم بالشخصيات والعلاقات والقرارات الصعبة والتفاصيل الواقعية.
+اجعل الصراعات إنسانية ومتعددة الجوانب وليست سطحية.
 `,
-
-  "رعب نفسي": `
-ابنِ التوتر تدريجيًا من خلال الغموض والأجواء والشك.
-اجعل الخوف نابعًا من الأحداث والشخصيات وليس الوصف المكرر.
+ "رعب نفسي":`
+ابنِ التوتر تدريجيًا من خلال الغموض والأجواء والشكوك.
+اهتم بالخوف النفسي والمفاجآت المنطقية دون الاعتماد على التفاصيل الدموية.
 `,
-
-  "حكايات للأطفال": `
-استخدم لغة واضحة ومناسبة للأطفال.
-اجعل الأحداث ممتعة وسهلة المتابعة.
-استخدم شخصيات محبوبة ورسالة إيجابية دون وعظ.
+ "حكايات للأطفال":`
+استخدم لغة واضحة وشخصيات محببة وأحداثًا سهلة المتابعة.
+اجعل القصة ممتعة ومناسبة للأطفال وتحمل معنى لطيفًا.
 `,
-
-  "تاريخية": `
-احترم الفترة التاريخية وعاداتها وبيئتها.
-اجعل الأحداث والشخصيات منسجمة مع الزمن المختار.
+ "تاريخية":`
+احترم البيئة التاريخية والعادات والأدوات المناسبة للعصر.
+اجعل الأحداث والشخصيات متفاعلة مع ظروف زمنها.
 `,
-
-  "كوميديا": `
-اجعل المواقف والحوار مصدرًا طبيعيًا للفكاهة.
-ابتعد عن النكات المكررة والإفيهات المفتعلة.
+ "كوميديا":`
+استخدم مواقف مضحكة نابعة من الشخصيات والأحداث.
+اجعل الحوار خفيفًا وذكيًا وتجنب النكات المتكررة.
 `
 };
 
-function getGenreDirection(genre) {
-  return GENRE_DIRECTIONS[genre] ||
-    "اكتب قصة متماسكة وممتعة، واهتم بتطور الشخصيات والأحداث.";
+function loadStories(){
+ try{
+  const raw=JSON.parse(localStorage.getItem(KEY)||"[]");
+  return Array.isArray(raw)?raw.map(normalizeStory):[];
+ }catch(e){return []}
 }
 
-function loadStories() {
-  try {
-    const raw = JSON.parse(localStorage.getItem(KEY) || "[]");
-    return Array.isArray(raw) ? raw.map(normalizeStory) : [];
-  } catch (e) {
-    return [];
+function normalizeStory(s){
+ const oldChapters=Array.isArray(s.chapters)?s.chapters:[];
+ return {
+  id:s.id||makeId(),
+  title:s.title||"قصة بلا عنوان",
+  summary:s.summary||s.description||"",
+  genre:s.genre||"قصة",
+  outline:s.outline||{},
+  chapters:oldChapters.map((c,i)=>{
+   if(typeof c==="string"){
+    return {title:"الفصل "+arabicNumber(i+1),content:c,summary:"",proofread:false};
+   }
+   return {
+    title:c.title||c.heading||"الفصل "+arabicNumber(i+1),
+    content:c.content||c.text||"",
+    summary:c.summary||"",
+    proofread:!!(c.proofread??c.reviewed)
+   };
+  }),
+  favorite:!!s.favorite,
+  createdAt:s.createdAt||new Date().toISOString(),
+  editedText:s.editedText||""
+ };
+}
+
+function saveStories(){
+ try{
+  localStorage.setItem(KEY,JSON.stringify(stories));
+ }catch(e){
+  toast("مساحة التخزين ممتلئة. صدّر مكتبتك للاحتفاظ بنسخة.");
+ }
+}
+
+function toast(message){
+ const el=$("toast");
+ el.textContent=message;
+ el.classList.add("show");
+ clearTimeout(toast.timer);
+ toast.timer=setTimeout(()=>el.classList.remove("show"),3000);
+}
+
+async function post(endpoint,payload){
+ const response=await fetch(API+endpoint,{
+  method:"POST",
+  headers:{"Content-Type":"application/json"},
+  body:JSON.stringify(payload)
+ });
+
+ let data;
+ try{
+  data=await response.json();
+ }catch(e){
+  throw new Error("الخادم أرسل استجابة غير مفهومة.");
+ }
+
+ if(!response.ok||data.success===false){
+  throw new Error(data.error||data.message||"حدث خطأ أثناء إنشاء القصة.");
+ }
+ return data;
+}
+
+function selectedMode(){
+ return document.querySelector('input[name="mode"]:checked')?.value||"custom";
+}
+
+document.querySelectorAll('input[name="mode"]').forEach(el=>{
+ el.addEventListener("change",()=>{
+  $("ideaField").classList.toggle("hidden",selectedMode()==="random");
+ });
+});
+
+function setProgress(percent,title,note){
+ $("status").classList.add("show");
+ $("progressFill").style.width=percent+"%";
+ $("statusPercent").textContent=percent+"%";
+ $("statusTitle").textContent=title;
+ $("statusNote").textContent=note;
+}
+
+function cleanChapterText(text){
+ let value=String(text||"").trim();
+ value=value.replace(/^عنوان الفصل\s*[:：].*$/im,"").trim();
+ value=value.replace(/^الفصل\s+[\d٠-٩]+\s*[:：\-–—].*$/im,"").trim();
+ return value;
+}
+
+/* استخراج المخطط مع الحفاظ على بيانات العالم والشخصيات */
+function extractOutline(data,count){
+ let full=data.outline??data;
+
+ if(typeof full==="string"){
+  try{full=JSON.parse(full);}
+  catch(e){full={chapters:full.split(/\n/).filter(Boolean)};}
+ }
+
+ if(Array.isArray(full)){
+  full={chapters:full};
+ }
+
+ const sourceChapters=
+  Array.isArray(full.chapters)?full.chapters:
+  Array.isArray(data.chapters)?data.chapters:[];
+
+ const chapters=Array.from({length:count},(_,i)=>{
+  const c=sourceChapters[i]||{};
+  if(typeof c==="string"){
+   return {
+    number:i+1,
+    title:"الفصل "+arabicNumber(i+1),
+    description:c
+   };
   }
-}
-
-function normalizeStory(s) {
-  const oldChapters = Array.isArray(s.chapters) ? s.chapters : [];
-
   return {
-    id: s.id || makeId(),
-    title: s.title || "قصة بلا عنوان",
-    summary: s.summary || s.description || "",
-    genre: s.genre || "قصة",
-    style: s.style || "",
-    outline: s.outline || "",
-    chapters: oldChapters.map((c, i) => {
-      if (typeof c === "string") {
-        return {
-          title: "الفصل " + arabicNumber(i + 1),
-          content: c,
-          summary: "",
-          proofread: false
-        };
-      }
-
-      return {
-        title: c.title || c.heading || "الفصل " + arabicNumber(i + 1),
-        content: c.content || c.text || "",
-        summary: c.summary || "",
-        proofread: !!(c.proofread ?? c.reviewed)
-      };
-    }),
-    favorite: !!s.favorite,
-    createdAt: s.createdAt || new Date().toISOString(),
-    editedText: s.editedText || ""
+   number:c.number||i+1,
+   title:c.title||c.name||"الفصل "+arabicNumber(i+1),
+   description:c.description||c.events||c.summary||c.plot||
+    "تتطور أحداث القصة مع الحفاظ على ترابطها."
   };
+ });
+
+ return {
+  ...full,
+  title:full.title||data.title||"",
+  summary:full.summary||full.description||data.summary||"",
+  characters:full.characters||data.characters||[],
+  world:full.world||data.world||"",
+  chapters,
+  creativeDirection:GENRE_DIRECTIONS[$("genre").value]||""
+ };
 }
 
-function saveStories() {
-  try {
-    localStorage.setItem(KEY, JSON.stringify(stories));
-  } catch (e) {
-    toast("مساحة التخزين ممتلئة. صدّر مكتبتك للاحتفاظ بنسخة.");
-  }
-}
+async function generateStory(){
+ const mode=selectedMode();
+ const idea=$("idea").value.trim();
 
-function toast(message) {
-  const el = $("toast");
-  el.textContent = message;
-  el.classList.add("show");
-  clearTimeout(toast.timer);
-  toast.timer = setTimeout(() => el.classList.remove("show"), 2800);
-}
+ if(mode==="custom"&&!idea){
+  toast("اكتب فكرة القصة أولًا، أو اختر وضع المفاجأة.");
+  $("idea").focus();
+  return;
+ }
 
-async function post(endpoint, payload) {
-  const response = await fetch(API + endpoint, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(payload)
+ const count=Number($("chaptersCount").value);
+ const genre=$("genre").value;
+ const hint=$("hint").value.trim();
+ const title=$("title").value.trim();
+ const btn=$("generateBtn");
+
+ btn.disabled=true;
+ let newStory=null;
+
+ try{
+  setProgress(3,"نرسم ملامح الحكاية...","الذكاء الاصطناعي يجهز الفكرة والشخصيات.");
+
+  /* إنشاء المخطط */
+  const outlineData=await post("/outline",{
+   mode,
+   title,
+   idea,
+   genre,
+   chapters:count,
+   details:[
+    hint,
+    GENRE_DIRECTIONS[genre]||""
+   ].filter(Boolean).join("\n\n")
   });
 
-  let data;
-  try {
-    data = await response.json();
-  } catch (e) {
-    throw new Error("استجابة غير مفهومة من الخادم.");
-  }
-
-  if (!response.ok || data.success === false) {
-    throw new Error(
-      data.details || data.error || data.message ||
-      "حدث خطأ أثناء إنشاء القصة."
-    );
-  }
-
-  return data;
-}
-
-function selectedMode() {
-  return document.querySelector(
-    'input[name="mode"]:checked'
-  )?.value || "custom";
-}
-
-document.querySelectorAll('input[name="mode"]').forEach(el => {
-  el.addEventListener("change", () => {
-    $("ideaField").classList.toggle(
-      "hidden",
-      selectedMode() === "random"
-    );
-  });
-});
-
-function setProgress(percent, title, note) {
-  $("status").classList.add("show");
-  $("progressFill").style.width = percent + "%";
-  $("statusPercent").textContent = percent + "%";
-  $("statusTitle").textContent = title;
-  $("statusNote").textContent = note;
-}
-
-function cleanChapterText(text) {
-  let value = String(text || "").trim();
-
-  value = value.replace(/^عنوان الفصل\s*[:：].*$/im, "").trim();
-  value = value.replace(
-    /^الفصل\s+[\d٠-٩]+\s*[:：\-–—].*$/im,
-    ""
-  ).trim();
-
-  return value;
-}
-
-/* قراءة المخطط الجديد من Worker */
-function extractOutline(data, count) {
-  let source = data.outline ?? data.chapters ?? [];
-
-  if (typeof source === "string") {
-    try {
-      source = JSON.parse(source);
-    } catch (e) {
-      source = [];
-    }
-  }
-
-  let chapters = Array.isArray(source)
-    ? source
-    : Array.isArray(source.chapters)
-      ? source.chapters
-      : [];
-
-  return Array.from({ length: count }, (_, i) => {
-    const c = chapters[i] || {};
-
-    if (typeof c === "string") {
-      return {
-        number: i + 1,
-        title: "الفصل " + arabicNumber(i + 1),
-        description: c,
-        goal: ""
-      };
-    }
-
-    return {
-      number: c.number || i + 1,
-      title: c.title || c.name ||
-        "الفصل " + arabicNumber(i + 1),
-      description: c.description || c.events ||
-        c.summary || c.plot || "",
-      goal: c.goal || ""
-    };
-  });
-}
-
-async function generateStory() {
-  const mode = selectedMode();
-  const idea = $("idea").value.trim();
-
-  if (mode === "custom" && !idea) {
-    toast("اكتب فكرة القصة أولًا، أو اختر وضع المفاجأة.");
-    $("idea").focus();
-    return;
-  }
-
-  const count = Number($("chaptersCount").value);
-  const genre = $("genre").value;
-  const direction = getGenreDirection(genre);
-  const btn = $("generateBtn");
-
-  btn.disabled = true;
-
-  let newStory = null;
-
-  try {
-    setProgress(
-      3,
-      "نرسم ملامح الحكاية...",
-      "يتم إعداد الفكرة والعالم والشخصيات."
-    );
-
-    /* إنشاء المخطط */
-    const outlineData = await post("/outline", {
-      mode,
-      title: $("title").value.trim(),
-      idea,
-      genre,
-      chapters: count,
-      details: [
-        $("hint").value.trim(),
-        "التوجيه الإبداعي الخاص بالنوع:",
-        direction
-      ].filter(Boolean).join("\n\n")
-    });
-
-    const plan = extractOutline(outlineData, count);
-
-    /* الاحتفاظ بالمخطط الكامل والشخصيات والعالم */
-    const fullOutline = outlineData.outline &&
-      typeof outlineData.outline === "object" &&
-      !Array.isArray(outlineData.outline)
-        ? { ...outlineData.outline }
-        : {};
-
-    fullOutline.chapters = plan;
-    fullOutline.genre = genre;
-    fullOutline.creativeDirection = direction;
-
-    if ($("title").value.trim()) {
-      fullOutline.title = $("title").value.trim();
-    }
-
-    newStory = {
-      id: makeId(),
-      title: $("title").value.trim() ||
-        outlineData.title ||
-        fullOutline.title ||
-        "حكاية جديدة",
-      summary: fullOutline.premise ||
-        fullOutline.description ||
-        outlineData.summary || "",
-      genre,
-      style: "",
-      outline: fullOutline,
-      chapters: [],
-      favorite: false,
-      createdAt: new Date().toISOString(),
-      editedText: ""
-    };
-
-    const previousSummaries = [];
-
-    /* كتابة الفصول واحدًا تلو الآخر */
-    for (let i = 0; i < count; i++) {
-      const pct = Math.round(8 + (i / count) * 87);
-
-      setProgress(
-        pct,
-        "نكتب الفصل " + arabicNumber(i + 1) +
-          " من " + arabicNumber(count),
-        "نحافظ على الشخصيات والأحداث وترابط الفصول."
-      );
-
-      const item = plan[i];
-
-      const previousSummary = previousSummaries.length
-        ? previousSummaries[previousSummaries.length - 1]
-        : "";
-
-      const result = await post("/chapter", {
-        chapterNumber: i + 1,
-        totalChapters: count,
-        storyTitle: newStory.title,
-        genre,
-        outline: fullOutline,
-        characters: fullOutline.characters || [],
-        chapterDescription: [
-          item.description,
-          item.goal ? "الهدف الدرامي: " + item.goal : "",
-          "التوجيه الإبداعي: " + direction
-        ].filter(Boolean).join("\n"),
-        previousSummary,
-        details: $("hint").value.trim()
-      });
-
-      const chapterText = cleanChapterText(
-        result.chapter || result.content || result.text || ""
-      );
-
-      if (!chapterText) {
-        throw new Error(
-          "المحرك لم يُرجع نص الفصل " + (i + 1)
-        );
-      }
-
-      const chapter = {
-        title: result.chapterTitle ||
-          result.title ||
-          item.title ||
-          "الفصل " + arabicNumber(i + 1),
-        content: chapterText,
-        summary: result.summary || "",
-        proofread: result.reviewed === true
-      };
-
-      newStory.chapters.push(chapter);
-
-      previousSummaries.push(
-        chapter.summary || chapter.content.slice(0, 1000)
-      );
-
-      /* حفظ تقدم القصة بعد كل فصل */
-      stories = stories.filter(s => s.id !== newStory.id);
-      stories.unshift(normalizeStory(newStory));
-      saveStories();
-      renderLibrary();
-    }
-
-    setProgress(
-      100,
-      "اكتملت الحكاية ✦",
-      "تم إنشاء جميع الفصول وحفظ القصة في مكتبتك."
-    );
-
-    renderLibrary();
-    toast("قصتك جاهزة ومحفوظة في المكتبة.");
-
-    setTimeout(() => openReader(newStory.id), 650);
-
-  } catch (error) {
-    if (newStory && newStory.chapters.length) {
-      stories = stories.filter(s => s.id !== newStory.id);
-      stories.unshift(normalizeStory(newStory));
-      saveStories();
-      renderLibrary();
-
-      toast("توقف التوليد، لكن تم حفظ الفصول المكتملة.");
-    } else {
-      toast(error.message || "تعذر إنشاء القصة.");
-    }
-
-    setProgress(
-      100,
-      "تعذر إكمال التوليد",
-      error.message || "تحقق من اتصال الإنترنت وإعدادات الخادم."
-    );
-
-  } finally {
-    btn.disabled = false;
-  }
-}
-
-$("generateBtn").addEventListener("click", generateStory);
-
-function escapeHTML(value) {
-  return String(value ?? "").replace(/[&<>"']/g, c => ({
-    "&": "&amp;",
-    "<": "&lt;",
-    ">": "&gt;",
-    '"': "&quot;",
-    "'": "&#39;"
-  }[c]));
-}
-
-function renderLibrary() {
-  const grid = $("storyGrid");
-
-  const list = stories.filter(s =>
-    currentFilter === "favorites" ? s.favorite : true
-  );
-
-  if (!list.length) {
-    grid.innerHTML =
-      '<div class="empty" style="grid-column:1/-1">' +
-      '<strong>لم تبدأ أي حكاية بعد</strong>' +
-      'كل قصة عظيمة تبدأ بفكرة صغيرة. اصنع أولى حكاياتك الآن.' +
-      '</div>';
-    return;
-  }
-
-  grid.innerHTML = list.map(s => {
-    const count = s.chapters.length;
-    const date = new Date(s.createdAt);
-    const dateText = isNaN(date)
-      ? ""
-      : date.toLocaleDateString("ar-EG");
-
-    return `<article class="story-card">
-      <div class="story-symbol">✧</div>
-      <h3>${escapeHTML(s.title)}</h3>
-      <p>${escapeHTML(s.summary || "حكاية تنتظر أن تكتشف تفاصيلها...")}</p>
-      <div class="card-meta">
-        <span>${escapeHTML(s.genre)}</span>
-        <span>${arabicNumber(count)} فصول · ${dateText}</span>
-      </div>
-      <div class="card-actions">
-        <button class="btn primary" data-action="read" data-id="${s.id}">قراءة</button>
-        <button class="btn" data-action="favorite" data-id="${s.id}">${s.favorite ? "★" : "☆"}</button>
-        <button class="btn" data-action="edit" data-id="${s.id}">تعديل</button>
-        <button class="btn" data-action="export" data-id="${s.id}">تصدير</button>
-        <button class="btn danger" data-action="delete" data-id="${s.id}">حذف</button>
-      </div>
-    </article>`;
-  }).join("");
-}
-
-$("storyGrid").addEventListener("click", e => {
-  const button = e.target.closest("button[data-action]");
-  if (!button) return;
-
-  const { action, id } = button.dataset;
-  const story = stories.find(s => s.id === id);
-  if (!story) return;
-
-  if (action === "read") openReader(id);
-
-  if (action === "favorite") {
-    story.favorite = !story.favorite;
-    saveStories();
-    renderLibrary();
-  }
-
-  if (action === "edit") openEdit(id);
-
-  if (action === "export") {
-    downloadJSON(story, "qissaty-story.json");
-  }
-
-  if (action === "delete") {
-    if (confirm("هل تريد حذف هذه القصة نهائيًا من مكتبتك؟")) {
-      stories = stories.filter(s => s.id !== id);
-      saveStories();
-      renderLibrary();
-      toast("تم حذف القصة.");
-    }
-  }
-});
-
-document.querySelectorAll(".tab").forEach(tab => {
-  tab.addEventListener("click", () => {
-    currentFilter = tab.dataset.filter;
-    document.querySelectorAll(".tab").forEach(t =>
-      t.classList.toggle("active", t === tab)
-    );
-    renderLibrary();
-  });
-});
-
-function openReader(id) {
-  const story = stories.find(s => s.id === id);
-  if (!story) return;
-
-  activeStoryId = id;
-  $("readerTitle").textContent = story.title;
-  $("readerSummary").textContent = story.summary || "";
-
-  $("readerBody").innerHTML = story.chapters.map((c, i) => {
-    const content =
-      story.editedText && story.chapters.length === 1
-        ? story.editedText
-        : c.content;
-
-    return `<article class="chapter" data-chapter="${i + 1}">
-      <div class="chapter-number">
-        الفصل ${arabicNumber(i + 1)} من ${arabicNumber(story.chapters.length)}
-      </div>
-      <h3>${escapeHTML(c.title || "الفصل " + arabicNumber(i + 1))}</h3>
-      <div class="chapter-content">${escapeHTML(content || "هذا الفصل لم يكتمل بعد.")}</div>
-      ${c.proofread
-        ? '<div class="proof-tag">✓ تمت مراجعة النص لغويًا</div>'
-        : ""}
-    </article>`;
-  }).join("");
-
-  $("readerOverlay").classList.add("open");
-  document.body.style.overflow = "hidden";
-  $("readerOverlay").scrollTop = 0;
-  updateReaderProgress();
-}
-
-function closeReader() {
-  $("readerOverlay").classList.remove("open");
-  document.body.style.overflow = "";
-  activeStoryId = null;
-}
-
-$("closeReader").addEventListener("click", closeReader);
-
-$("readerOverlay").addEventListener("click", e => {
-  if (e.target === $("readerOverlay")) closeReader();
-});
-
-$("readerOverlay").addEventListener("scroll", () => {
-  if (readerTick) return;
-
-  readerTick = true;
-
-  requestAnimationFrame(() => {
-    updateReaderProgress();
-    readerTick = false;
-  });
-}, { passive: true });
-
-function updateReaderProgress() {
-  const overlay = $("readerOverlay");
-  if (!overlay.classList.contains("open")) return;
-
-  const chapters = [
-    ...$("readerBody").querySelectorAll(".chapter")
-  ];
-
-  if (!chapters.length) return;
-
-  const target = overlay.scrollTop + 190;
-  let current = 0;
-
-  chapters.forEach((chapter, i) => {
-    if (chapter.offsetTop <= target) current = i;
-  });
-
-  const total = chapters.length;
-  const pct = Math.min(
-    100,
-    Math.round(((current + 1) / total) * 100)
-  );
-
-  $("readerProgressText").textContent =
-    "الفصل " + arabicNumber(current + 1) +
-    " من " + arabicNumber(total);
-
-  $("readerProgressPct").textContent = pct + "%";
-  $("readerProgressFill").style.width = pct + "%";
-}
-
-function storyAsText(story) {
-  return [
-    story.title,
-    story.summary,
-    ...story.chapters.map((c, i) =>
-      "\n\nالفصل " + arabicNumber(i + 1) +
-      " — " + c.title + "\n\n" + c.content
-    )
-  ].join("\n");
-}
-
-function openEdit(id) {
-  const story = stories.find(s => s.id === id);
-  if (!story) return;
-
-  editingId = id;
-  $("editText").value = storyAsText(story);
-  $("editModal").classList.add("open");
-}
-
-$("cancelEdit").addEventListener("click", () => {
-  $("editModal").classList.remove("open");
-  editingId = null;
-});
-
-$("editModal").addEventListener("click", e => {
-  if (e.target === $("editModal")) {
-    $("cancelEdit").click();
-  }
-});
-
-$("saveEdit").addEventListener("click", () => {
-  const story = stories.find(s => s.id === editingId);
-  if (!story) return;
-
-  const value = $("editText").value.trim();
-
-  if (!value) {
-    toast("لا يمكن حفظ قصة فارغة.");
-    return;
-  }
-
-  story.editedText = value;
-
-  if (story.chapters.length === 1) {
-    story.chapters[0].content = value;
-  } else {
-    story.chapters = [{
-      title: "النص المعدل",
-      content: value,
-      summary: "نسخة معدلة من القصة",
-      proofread: false
-    }];
-    story.editedText = "";
-  }
-
+  const fullOutline=extractOutline(outlineData,count);
+
+  newStory={
+   id:makeId(),
+   title:fullOutline.title||title||"حكاية جديدة",
+   summary:fullOutline.summary||"",
+   genre,
+   outline:fullOutline,
+   chapters:[],
+   favorite:false,
+   createdAt:new Date().toISOString(),
+   editedText:""
+  };
+
+  /* حفظ القصة فور تجهيز المخطط */
+  stories=stories.filter(s=>s.id!==newStory.id);
+  stories.unshift(normalizeStory(newStory));
   saveStories();
   renderLibrary();
 
-  $("editModal").classList.remove("open");
-  editingId = null;
-  toast("تم حفظ تعديلات القصة.");
-});
+  let previousSummary="";
 
-function downloadJSON(data, filename) {
-  const blob = new Blob(
-    [JSON.stringify(data, null, 2)],
-    { type: "application/json;charset=utf-8" }
-  );
+  /* كتابة الفصول بالتتابع */
+  for(let i=0;i<count;i++){
+   const pct=Math.round(8+(i/count)*87);
+   const item=fullOutline.chapters[i];
 
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement("a");
+   setProgress(
+    pct,
+    "نكتب الفصل "+arabicNumber(i+1)+" من "+arabicNumber(count),
+    "نطور الأحداث ونحافظ على الشخصيات وما حدث في الفصول السابقة."
+   );
 
-  a.href = url;
-  a.download = filename;
+   const result=await post("/chapter",{
+    chapterNumber:i+1,
+    totalChapters:count,
+    storyTitle:newStory.title,
+    genre,
+    outline:fullOutline,
+    characters:fullOutline.characters,
+    chapterDescription:item.description,
+    previousSummary,
+    details:hint
+   });
 
-  document.body.appendChild(a);
-  a.click();
-  a.remove();
+   const chapterText=cleanChapterText(
+    result.chapter||result.content||result.text||""
+   );
 
-  URL.revokeObjectURL(url);
-}
+   if(!chapterText){
+    throw new Error("الفصل "+arabicNumber(i+1)+" عاد فارغًا من المحرك.");
+   }
 
-$("exportAllBtn").addEventListener("click", () => {
-  if (!stories.length) {
-    toast("المكتبة فارغة.");
-    return;
-  }
+   const chapter={
+    title:result.chapterTitle||result.title||item.title||
+     "الفصل "+arabicNumber(i+1),
+    content:chapterText,
+    summary:result.summary||"",
+    proofread:result.reviewed===true
+   };
 
-  downloadJSON(
-    { app: "Qissaty", version: 1, stories },
-    "qissaty-library.json"
-  );
-});
+   newStory.chapters.push(chapter);
 
-$("importBtn").addEventListener("click", () =>
-  $("importFile").click()
-);
+   previousSummary=[
+    previousSummary,
+    chapter.summary||chapter.content.slice(0,1200)
+   ].filter(Boolean).join("\n\n");
 
-$("importFile").addEventListener("change", async e => {
-  const file = e.target.files?.[0];
-  if (!file) return;
-
-  try {
-    const data = JSON.parse(await file.text());
-
-    const imported = Array.isArray(data)
-      ? data
-      : Array.isArray(data.stories)
-        ? data.stories
-        : [data];
-
-    if (!imported.length) {
-      throw new Error("الملف لا يحتوي على قصص.");
-    }
-
-    let added = 0;
-
-    imported.forEach(item => {
-      if (!item || typeof item !== "object") return;
-
-      const story = normalizeStory(item);
-      if (!story.chapters.length) return;
-
-      if (stories.some(s => s.id === story.id)) {
-        story.id = makeId();
-      }
-
-      stories.unshift(story);
-      added++;
-    });
-
-    saveStories();
-    renderLibrary();
-    toast("تم استيراد " + arabicNumber(added) + " قصة.");
-
-  } catch (err) {
-    toast("ملف غير صالح أو لا يحتوي على قصص.");
-  }
-
-  e.target.value = "";
-});
-
-renderLibrary();
-
-   // لا نكرر إضافة القصة؛ نستبدل النسخة المحفوظة أثناء التوليد.
+   /* تحديث النسخة المحفوظة بعد كل فصل */
    stories=stories.filter(s=>s.id!==newStory.id);
    stories.unshift(normalizeStory(newStory));
    saveStories();
+   renderLibrary();
   }
+
   setProgress(100,"اكتملت الحكاية ✦","تم إنشاء جميع الفصول وحفظ القصة في مكتبتك.");
   renderLibrary();
   toast("قصتك جاهزة ومحفوظة في المكتبة.");
+
   setTimeout(()=>openReader(newStory.id),650);
+
  }catch(error){
   if(newStory&&newStory.chapters.length){
    stories=stories.filter(s=>s.id!==newStory.id);
-   stories.unshift(normalizeStory(newStory));saveStories();renderLibrary();
+   stories.unshift(normalizeStory(newStory));
+   saveStories();
+   renderLibrary();
    toast("توقف التوليد، لكن تم حفظ الفصول المكتملة.");
   }else{
    toast(error.message||"تعذر إنشاء القصة.");
   }
-  setProgress(100,"تعذر إكمال التوليد",error.message||"تحقق من اتصال الإنترنت وإعدادات الخادم.");
+
+  setProgress(
+   100,
+   "تعذر إكمال التوليد",
+   error.message||"تحقق من اتصال الإنترنت وإعدادات الخادم."
+  );
+
  }finally{
   btn.disabled=false;
  }
 }
+
 $("generateBtn").addEventListener("click",generateStory);
 
+/* المكتبة */
 function renderLibrary(){
  const grid=$("storyGrid");
- let list=stories.filter(s=>currentFilter==="favorites"?s.favorite:true);
+ const list=stories.filter(s=>currentFilter==="favorites"?s.favorite:true);
+
  if(!list.length){
-  grid.innerHTML='<div class="empty" style="grid-column:1/-1"><strong>لم تبدأ أي حكاية بعد</strong>كل قصة عظيمة تبدأ بفكرة صغيرة. اصنع أولى حكاياتك الآن.</div>';
+  grid.innerHTML=`
+   <div class="empty" style="grid-column:1/-1">
+    <strong>لم تبدأ أي حكاية بعد</strong>
+    كل قصة عظيمة تبدأ بفكرة صغيرة. اصنع أولى حكاياتك الآن.
+   </div>`;
   return;
  }
+
  grid.innerHTML=list.map(s=>{
   const count=s.chapters.length;
   const date=new Date(s.createdAt);
   const dateText=isNaN(date)?"":date.toLocaleDateString("ar-EG");
-  return `<article class="story-card">
-   <div class="story-symbol">✧</div>
-   <h3>${escapeHTML(s.title)}</h3>
-   <p>${escapeHTML(s.summary||"حكاية تنتظر أن تكتشف تفاصيلها...")}</p>
-   <div class="card-meta"><span>${escapeHTML(s.genre)}</span><span>${arabicNumber(count)} فصول · ${dateText}</span></div>
-   <div class="card-actions">
-    <button class="btn primary" data-action="read" data-id="${s.id}">قراءة</button>
-    <button class="btn" data-action="favorite" data-id="${s.id}">${s.favorite?"★":"☆"}</button>
-    <button class="btn" data-action="edit" data-id="${s.id}">تعديل</button>
-    <button class="btn" data-action="export" data-id="${s.id}">تصدير</button>
-    <button class="btn danger" data-action="delete" data-id="${s.id}">حذف</button>
-   </div>
-  </article>`;
+
+  return `
+   <article class="story-card">
+    <div class="story-symbol">✧</div>
+    <h3>${escapeHTML(s.title)}</h3>
+    <p>${escapeHTML(s.summary||"حكاية تنتظر أن تكتشف تفاصيلها...")}</p>
+    <div class="card-meta">
+     <span>${escapeHTML(s.genre)}</span>
+     <span>${arabicNumber(count)} فصول · ${dateText}</span>
+    </div>
+    <div class="card-actions">
+     <button class="btn primary" data-action="read" data-id="${s.id}">قراءة</button>
+     <button class="btn" data-action="favorite" data-id="${s.id}">${s.favorite?"★":"☆"}</button>
+     <button class="btn" data-action="edit" data-id="${s.id}">تعديل</button>
+     <button class="btn" data-action="export" data-id="${s.id}">تصدير</button>
+     <button class="btn danger" data-action="delete" data-id="${s.id}">حذف</button>
+    </div>
+   </article>`;
  }).join("");
 }
+
 function escapeHTML(value){
- return String(value??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+ return String(value??"").replace(/[&<>"']/g,c=>({
+  "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
+ }[c]));
 }
+
 $("storyGrid").addEventListener("click",e=>{
  const button=e.target.closest("button[data-action]");
  if(!button)return;
+
  const {action,id}=button.dataset;
  const story=stories.find(s=>s.id===id);
  if(!story)return;
+
  if(action==="read")openReader(id);
+
  if(action==="favorite"){
-  story.favorite=!story.favorite;saveStories();renderLibrary();
+  story.favorite=!story.favorite;
+  saveStories();
+  renderLibrary();
  }
+
  if(action==="edit")openEdit(id);
+
  if(action==="export")downloadJSON(story,"qissaty-story.json");
+
  if(action==="delete"){
   if(confirm("هل تريد حذف هذه القصة نهائيًا من مكتبتك؟")){
-   stories=stories.filter(s=>s.id!==id);saveStories();renderLibrary();toast("تم حذف القصة.");
+   stories=stories.filter(s=>s.id!==id);
+   saveStories();
+   renderLibrary();
+   toast("تم حذف القصة.");
   }
  }
 });
-document.querySelectorAll(".tab").forEach(tab=>tab.addEventListener("click",()=>{
- currentFilter=tab.dataset.filter;
- document.querySelectorAll(".tab").forEach(t=>t.classList.toggle("active",t===tab));
- renderLibrary();
-}));
 
+document.querySelectorAll(".tab").forEach(tab=>{
+ tab.addEventListener("click",()=>{
+  currentFilter=tab.dataset.filter;
+  document.querySelectorAll(".tab").forEach(t=>{
+   t.classList.toggle("active",t===tab);
+  });
+  renderLibrary();
+ });
+});
+
+/* قارئ القصص */
 function openReader(id){
- const story=stories.find(s=>s.id===id);if(!story)return;
+ const story=stories.find(s=>s.id===id);
+ if(!story)return;
+
  activeStoryId=id;
  $("readerTitle").textContent=story.title;
  $("readerSummary").textContent=story.summary||"";
+
  $("readerBody").innerHTML=story.chapters.map((c,i)=>{
-  const content=story.editedText&&story.chapters.length===1?story.editedText:c.content;
-  return `<article class="chapter" data-chapter="${i+1}">
-   <div class="chapter-number">الفصل ${arabicNumber(i+1)} من ${arabicNumber(story.chapters.length)}</div>
-   <h3>${escapeHTML(c.title||"الفصل "+arabicNumber(i+1))}</h3>
-   <div class="chapter-content">${escapeHTML(content||"هذا الفصل لم يكتمل بعد.")}</div>
-   ${c.proofread?'<div class="proof-tag">✓ تمت مراجعة النص لغويًا</div>':""}
-  </article>`;
+  const content=story.editedText&&story.chapters.length===1?
+   story.editedText:c.content;
+
+  return `
+   <article class="chapter" data-chapter="${i+1}">
+    <div class="chapter-number">
+     الفصل ${arabicNumber(i+1)} من ${arabicNumber(story.chapters.length)}
+    </div>
+    <h3>${escapeHTML(c.title||"الفصل "+arabicNumber(i+1))}</h3>
+    <div class="chapter-content">${escapeHTML(content||"هذا الفصل لم يكتمل بعد.")}</div>
+    ${c.proofread?'<div class="proof-tag">✓ تمت مراجعة النص لغويًا</div>':""}
+   </article>`;
  }).join("");
+
  $("readerOverlay").classList.add("open");
  document.body.style.overflow="hidden";
  $("readerOverlay").scrollTop=0;
  updateReaderProgress();
 }
+
 function closeReader(){
  $("readerOverlay").classList.remove("open");
  document.body.style.overflow="";
  activeStoryId=null;
 }
+
 $("closeReader").addEventListener("click",closeReader);
-$("readerOverlay").addEventListener("click",e=>{if(e.target===$("readerOverlay"))closeReader();});
+
+$("readerOverlay").addEventListener("click",e=>{
+ if(e.target===$("readerOverlay"))closeReader();
+});
+
 $("readerOverlay").addEventListener("scroll",()=>{
  if(readerTick)return;
  readerTick=true;
- requestAnimationFrame(()=>{updateReaderProgress();readerTick=false;});
+ requestAnimationFrame(()=>{
+  updateReaderProgress();
+  readerTick=false;
+ });
 },{passive:true});
+
 function updateReaderProgress(){
  const overlay=$("readerOverlay");
  if(!overlay.classList.contains("open"))return;
+
  const chapters=[...$("readerBody").querySelectorAll(".chapter")];
  if(!chapters.length)return;
+
  const target=overlay.scrollTop+190;
  let current=0;
+
  chapters.forEach((chapter,i)=>{
   if(chapter.offsetTop<=target)current=i;
  });
+
  const total=chapters.length;
  const pct=Math.min(100,Math.round(((current+1)/total)*100));
- $("readerProgressText").textContent="الفصل "+arabicNumber(current+1)+" من "+arabicNumber(total);
+
+ $("readerProgressText").textContent=
+  "الفصل "+arabicNumber(current+1)+" من "+arabicNumber(total);
  $("readerProgressPct").textContent=pct+"%";
  $("readerProgressFill").style.width=pct+"%";
 }
 
+/* تعديل القصص */
 function storyAsText(story){
  return [
   story.title,
   story.summary,
-  ...story.chapters.map((c,i)=>"\n\nالفصل "+arabicNumber(i+1)+" — "+c.title+"\n\n"+c.content)
+  ...story.chapters.map((c,i)=>
+   "\n\nالفصل "+arabicNumber(i+1)+" — "+c.title+"\n\n"+c.content
+  )
  ].join("\n");
 }
+
 function openEdit(id){
- const story=stories.find(s=>s.id===id);if(!story)return;
+ const story=stories.find(s=>s.id===id);
+ if(!story)return;
+
  editingId=id;
  $("editText").value=storyAsText(story);
  $("editModal").classList.add("open");
 }
+
 $("cancelEdit").addEventListener("click",()=>{
- $("editModal").classList.remove("open");editingId=null;
+ $("editModal").classList.remove("open");
+ editingId=null;
 });
-$("editModal").addEventListener("click",e=>{if(e.target===$("editModal"))$("cancelEdit").click();});
+
+$("editModal").addEventListener("click",e=>{
+ if(e.target===$("editModal"))$("cancelEdit").click();
+});
+
 $("saveEdit").addEventListener("click",()=>{
- const story=stories.find(s=>s.id===editingId);if(!story)return;
+ const story=stories.find(s=>s.id===editingId);
+ if(!story)return;
+
  const value=$("editText").value.trim();
- if(!value){toast("لا يمكن حفظ قصة فارغة.");return;}
+ if(!value){
+  toast("لا يمكن حفظ قصة فارغة.");
+  return;
+ }
+
  story.editedText=value;
- if(story.chapters.length===1)story.chapters[0].content=value;
- else{
-  // عند تعديل النص الكامل متعدد الفصول، نحفظ النسخة المعدلة في فصل واحد حتى لا نفقد النص.
-  story.chapters=[{title:"النص المعدل",content:value,summary:"نسخة معدلة من القصة",proofread:false}];
+
+ if(story.chapters.length===1){
+  story.chapters[0].content=value;
+ }else{
+  story.chapters=[{
+   title:"النص المعدل",
+   content:value,
+   summary:"نسخة معدلة من القصة",
+   proofread:false
+  }];
   story.editedText="";
  }
- saveStories();renderLibrary();
- $("editModal").classList.remove("open");editingId=null;
+
+ saveStories();
+ renderLibrary();
+ $("editModal").classList.remove("open");
+ editingId=null;
  toast("تم حفظ تعديلات القصة.");
 });
 
+/* التصدير والاستيراد */
 function downloadJSON(data,filename){
- const blob=new Blob([JSON.stringify(data,null,2)],{type:"application/json;charset=utf-8"});
+ const blob=new Blob(
+  [JSON.stringify(data,null,2)],
+  {type:"application/json;charset=utf-8"}
+ );
  const url=URL.createObjectURL(blob);
- const a=document.createElement("a");a.href=url;a.download=filename;
- document.body.appendChild(a);a.click();a.remove();
- URL.revokeObjectURL(url);
+ const a=document.createElement("a");
+ a.href=url;
+ a.download=filename;
+ document.body.appendChild(a);
+ a.click();
+ a.remove();
+ setTimeout(()=>URL.revokeObjectURL(url),1000);
 }
+
 $("exportAllBtn").addEventListener("click",()=>{
- if(!stories.length){toast("المكتبة فارغة.");return;}
- downloadJSON({app:"Qissaty",version:1,stories},"qissaty-library.json");
+ if(!stories.length){
+  toast("المكتبة فارغة.");
+  return;
+ }
+ downloadJSON(
+  {app:"Qissaty",version:1,stories},
+  "qissaty-library.json"
+ );
 });
+
 $("importBtn").addEventListener("click",()=>$("importFile").click());
+
 $("importFile").addEventListener("change",async e=>{
- const file=e.target.files?.[0];if(!file)return;
+ const file=e.target.files?.[0];
+ if(!file)return;
+
  try{
   const data=JSON.parse(await file.text());
-  const imported=Array.isArray(data)?data:(Array.isArray(data.stories)?data.stories:[data]);
+  const imported=Array.isArray(data)?
+   data:(Array.isArray(data.stories)?data.stories:[data]);
+
   if(!imported.length)throw new Error("الملف لا يحتوي على قصص.");
+
   let added=0;
+
   imported.forEach(item=>{
    if(!item||typeof item!=="object")return;
+
    const story=normalizeStory(item);
    if(!story.chapters.length)return;
-   if(stories.some(s=>s.id===story.id))story.id=makeId();
-   stories.unshift(story);added++;
+
+   if(stories.some(s=>s.id===story.id)){
+    story.id=makeId();
+   }
+
+   stories.unshift(story);
+   added++;
   });
-  saveStories();renderLibrary();toast("تم استيراد "+arabicNumber(added)+" قصة.");
- }catch(err){toast("ملف غير صالح أو لا يحتوي على قصص.");}
+
+  saveStories();
+  renderLibrary();
+  toast("تم استيراد "+arabicNumber(added)+" قصة.");
+
+ }catch(err){
+  toast("ملف غير صالح أو لا يحتوي على قصص.");
+ }
+
  e.target.value="";
 });
 
+/* تشغيل الموقع */
 renderLibrary();
 </script>
 </body>
