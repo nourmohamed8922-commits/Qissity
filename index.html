@@ -1,214 +1,184 @@
 
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#100e1c">
-<title>قصتي | اصنع عالمك بالكلمات</title>
+<title>قصتي ♥</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#100e1c;--panel:#1b172b;--panel2:#241e37;
-  --text:#f6f0ff;--muted:#b7aacb;--pink:#e9a2c8;
-  --purple:#a98bff;--border:#ffffff18;--danger:#ff7777;
+  --bg:#100e1c;--p:#1b172b;--p2:#241e37;
+  --tx:#f6f0ff;--mut:#b7aacb;--pk:#e9a2c8;
+  --vi:#a98bff;--bd:#ffffff18;
 }
 *{box-sizing:border-box}
 body{
-  margin:0;background:radial-gradient(ellipse at top,#29203e 0%,var(--bg) 58%);
-  color:var(--text);font-family:'Cairo',sans-serif;min-height:100vh;
+  margin:0;background:radial-gradient(ellipse at top,#29203e 0%,var(--bg) 60%);
+  color:var(--tx);font-family:'Cairo',sans-serif;min-height:100vh;
 }
-button,input,textarea,select{font:inherit}
+button,input,textarea{font:inherit}
 button{cursor:pointer}
-header{
-  display:flex;align-items:center;justify-content:space-between;
-  gap:12px;padding:18px max(18px,calc((100% - 1050px)/2));
-  border-bottom:1px solid var(--border);background:#100e1ccc;
-  position:sticky;top:0;z-index:5;backdrop-filter:blur(12px);
+.wrap{width:min(850px,92%);margin:auto;padding:18px 0 55px}
+header{display:flex;justify-content:space-between;align-items:center;margin-bottom:25px}
+.logo{font-size:25px;font-weight:800;color:var(--pk)}
+.badge{background:var(--p2);border:1px solid var(--bd);padding:7px 13px;border-radius:30px;font-size:13px}
+.hero{
+  --c:#ff4d8d;text-align:center;padding:30px 15px;
+  border:1px solid var(--bd);border-radius:22px;
+  background:linear-gradient(145deg,#ffffff08,#ffffff02);
+  margin-bottom:18px;
 }
-.logo{font-size:25px;font-weight:800;color:var(--pink)}
-.logo small{display:block;font-size:11px;color:var(--muted);font-weight:400}
-.container{width:min(920px,92%);margin:30px auto 70px}
-.hero{text-align:center;margin:35px 0}
-.hero h1{font-size:clamp(30px,6vw,48px);margin:0;color:var(--pink)}
-.hero p{color:var(--muted);margin:8px 0}
-.panel{
+.ic{font-size:42px}
+.hero h1{color:var(--c);margin:8px 0;font-size:29px}
+.hero p{color:var(--mut);margin:0}
+.genres{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:18px}
+.gb,.chip{
+  background:var(--p);border:1px solid var(--bd);color:var(--tx);
+  padding:11px 8px;border-radius:13px;transition:.2s;
+}
+.gb.on,.chip.on{
+  border-color:var(--c,var(--pk));background:#ffffff12;
+  box-shadow:0 0 15px #e9a2c822;
+}
+.card{
   background:linear-gradient(145deg,#211b33,#181526);
-  border:1px solid var(--border);border-radius:22px;padding:22px;
-  margin:18px 0;box-shadow:0 15px 45px #0002;
+  border:1px solid var(--bd);border-radius:20px;padding:19px;margin-bottom:17px;
 }
-h2{font-size:20px;margin:0 0 17px}
-label{display:block;color:var(--muted);font-size:14px;margin:13px 0 7px}
-input,textarea,select{
-  width:100%;background:#100e1c;color:var(--text);
-  border:1px solid var(--border);border-radius:12px;
-  padding:12px 14px;outline:none;
+.lbl{display:block;color:var(--mut);font-size:14px;margin-bottom:10px}
+.row{display:flex;gap:9px;flex-wrap:wrap}
+.row .chip{flex:1;min-width:85px}
+textarea,input{
+  width:100%;border:1px solid var(--bd);border-radius:14px;
+  background:var(--p2);color:var(--tx);padding:12px;
+  outline:none;resize:vertical;
 }
-input:focus,textarea:focus,select:focus{border-color:var(--purple)}
-textarea{min-height:115px;resize:vertical}
-.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
-.btn{
-  border:0;border-radius:12px;padding:12px 18px;
-  color:#180f25;background:linear-gradient(110deg,var(--pink),var(--purple));
-  font-weight:800;transition:.2s;
+textarea:focus,input:focus{border-color:var(--vi)}
+textarea{min-height:75px}
+.go{
+  width:100%;border:0;border-radius:18px;padding:15px;
+  font-weight:800;font-size:1.08rem;color:#fff;
+  background:linear-gradient(90deg,var(--pk),var(--vi));
+  cursor:pointer;margin-top:16px;
 }
-.btn:hover{filter:brightness(1.08);transform:translateY(-1px)}
-.btn:disabled{opacity:.5;cursor:not-allowed;transform:none}
-.btn.secondary{background:var(--panel2);color:var(--text);border:1px solid var(--border)}
-.btn.danger{background:#49242e;color:#ffd9df}
-.btn.small{padding:7px 12px;font-size:13px}
-.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
-.main-btn{width:100%;font-size:17px;margin-top:20px;padding:15px}
-.note{font-size:12px;color:var(--muted);line-height:1.8}
-.status{margin-top:14px;color:var(--pink);font-size:14px;min-height:25px}
-.hidden{display:none!important}
-.story-title{font-family:'Amiri',serif;font-size:30px;color:var(--pink);text-align:center}
-.story-body{
-  font-family:'Amiri',serif;font-size:21px;line-height:2.15;
-  white-space:pre-wrap;color:#f4eefa;
+.go:disabled{opacity:.55;cursor:wait}
+.story{white-space:pre-wrap;font-size:1.06rem;line-height:2}
+.story h2{margin:0 0 14px;font-size:1.4rem;color:var(--pk)}
+.msg{color:var(--mut)}
+.tools{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
+.note{color:var(--mut);font-size:.82rem;margin-top:10px;line-height:1.8}
+.hi{
+  display:block;width:100%;text-align:right;margin-top:8px;
+  padding:12px;border-radius:14px;border:1px solid var(--bd);
+  background:var(--p2);color:var(--tx);cursor:pointer;
 }
-.story-card{
-  background:#ffffff08;border:1px solid var(--border);
-  border-radius:15px;padding:15px;margin:12px 0;
+.history-item{
+  padding:12px;border:1px solid var(--bd);border-radius:13px;
+  margin-top:10px;background:#ffffff05;
 }
-.story-card h3{margin:0 0 7px;color:var(--pink)}
-.story-card p{color:var(--muted);font-size:13px;margin:0 0 12px}
-.empty{text-align:center;color:var(--muted);padding:25px}
+.history-item strong{display:block;color:var(--pk);margin-bottom:8px}
+.history-actions{display:flex;gap:7px;flex-wrap:wrap}
+.small{padding:7px 12px;font-size:12px}
 .modal{
-  position:fixed;inset:0;background:#000b;z-index:20;
+  position:fixed;inset:0;background:#000b;z-index:99;
   display:flex;align-items:center;justify-content:center;padding:15px;
 }
 .modal-box{
-  width:min(520px,100%);max-height:90vh;overflow:auto;
-  background:#1b172b;border:1px solid var(--border);
-  border-radius:20px;padding:22px;
+  width:min(500px,100%);max-height:90vh;overflow:auto;
+  background:#1b172b;border:1px solid var(--bd);
+  border-radius:20px;padding:20px;
 }
 .warning{
-  background:#563b241f;border:1px solid #e7b36c55;
-  border-radius:12px;padding:12px;color:#f0c98e;
-  font-size:12px;line-height:1.8;margin:12px 0;
+  background:#60421d22;border:1px solid #d8a34b55;
+  border-radius:12px;padding:12px;color:#f1cc91;
+  font-size:12px;line-height:1.9;margin:13px 0;
 }
-footer{text-align:center;color:var(--muted);font-size:12px;padding:25px}
-@media(max-width:600px){
-  .grid{grid-template-columns:1fr}
-  .panel{padding:16px}
-  .story-body{font-size:19px}
-  header{padding:12px 4%}
+.modal-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.modal-actions button{flex:1;min-width:100px}
+.hidden{display:none!important}
+@media(max-width:520px){
+  .genres{grid-template-columns:repeat(2,1fr)}
+  .wrap{width:94%}
+  .card{padding:15px}
 }
 </style>
 </head>
 <body>
 
-<header>
-  <div class="logo">قصتي <small>اصنع عالمك بالكلمات</small></div>
-  <button class="btn secondary small" id="settingsBtn">⚙️ الإعدادات</button>
-</header>
+<div class="wrap">
+  <header>
+    <div class="logo">قصتي ♥</div>
+    <div style="display:flex;gap:8px;align-items:center">
+      <span class="badge">نور وحنان</span>
+      <button class="chip" id="settingsBtn" aria-label="الإعدادات">⚙️</button>
+    </div>
+  </header>
 
-<main class="container">
-  <section class="hero">
-    <h1>كل فكرة تستحق حكاية ✨</h1>
-    <p>اكتب فكرتك، ودع الكلمات تصنع عالمًا كاملًا.</p>
+  <section class="hero" id="hero">
+    <div class="ic" id="hic">💞</div>
+    <h1 id="htl">رومانسي</h1>
+    <p>نور وحنان أبطال كل حكاية</p>
   </section>
 
-  <section class="panel">
-    <h2>📖 اصنع قصة جديدة</h2>
+  <div class="genres" id="genres"></div>
 
-    <label for="idea">فكرة القصة (اختياري)</label>
-    <textarea id="idea" placeholder="اكتب فكرتك هنا... أو اتركها فارغة ودع الذكاء الاصطناعي يفاجئك."></textarea>
+  <div class="card">
+    <label class="lbl">الطول</label>
+    <div class="row" id="lens"></div>
 
-    <div class="grid">
-      <div>
-        <label for="genre">نوع القصة</label>
-        <select id="genre">
-          <option value="رومانسية">رومانسية</option>
-          <option value="خيال علمي">خيال علمي</option>
-          <option value="رعب">رعب</option>
-          <option value="كوميدية">كوميدية</option>
-          <option value="فانتازيا">فانتازيا</option>
-          <option value="مغامرة">مغامرة</option>
-          <option value="غموض">غموض</option>
-          <option value="دراما">دراما</option>
-        </select>
-      </div>
-      <div>
-        <label for="length">طول القصة</label>
-        <select id="length">
-          <option value="قصيرة، نحو 400 كلمة">قصيرة</option>
-          <option value="متوسطة، نحو 900 كلمة" selected>متوسطة</option>
-          <option value="طويلة، نحو 1600 كلمة">طويلة</option>
-        </select>
-      </div>
-      <div>
-        <label for="mood">طابع المشاعر</label>
-        <select id="mood">
-          <option value="هادئ ودافئ">هادئ ودافئ</option>
-          <option value="عاطفي ومؤثر" selected>عاطفي ومؤثر</option>
-          <option value="شاعري وعميق">شاعري وعميق</option>
-        </select>
-      </div>
-      <div>
-        <label for="ending">النهاية</label>
-        <select id="ending">
-          <option value="سعيدة">سعيدة</option>
-          <option value="مفاجئة">مفاجئة</option>
-          <option value="مفتوحة">مفتوحة</option>
-          <option value="مؤثرة">مؤثرة</option>
-          <option value="يختارها الكاتب بما يناسب الأحداث">اتركها للكاتب</option>
-        </select>
-      </div>
+    <div id="heatBox" style="margin-top:14px">
+      <label class="lbl">درجة الرومانسية</label>
+      <div class="row" id="heats"></div>
     </div>
 
-    <button class="btn main-btn" id="generateBtn">✨ أنشئ قصتي</button>
-    <div class="status" id="status"></div>
-    <p class="note">سيتم إنشاء القصة كاملة في طلب واحد. كل ضغطة تنشئ قصة جديدة، ولا تستكمل القصة السابقة.</p>
-  </section>
+    <label class="lbl" style="margin-top:14px" for="idea">فكرة أو موقف (اختياري)</label>
+    <textarea id="idea" rows="2" placeholder="مثلاً: ليلة مطر في إسكندرية بعد غياب"></textarea>
 
-  <section class="panel hidden" id="resultPanel">
-    <h2>🌙 قصتك الجديدة</h2>
-    <div id="storyTitle" class="story-title"></div>
-    <div id="storyText" class="story-body"></div>
-    <div class="actions">
-      <button class="btn" id="saveBtn">♡ احفظ القصة</button>
-      <button class="btn secondary" id="copyBtn">نسخ القصة</button>
-      <button class="btn secondary" id="downloadBtn">تنزيل TXT</button>
-      <button class="btn secondary" id="newBtn">قصة جديدة</button>
+    <button class="go" id="go">ألّف القصة ✨</button>
+    <div class="note" id="status">أدخل مفتاح Gemini من الإعدادات لبدء التأليف.</div>
+  </div>
+
+  <div class="card" id="out" style="display:none">
+    <div class="story" id="story"></div>
+    <div class="tools" id="tools" style="display:none">
+      <button class="chip" id="copy">نسخ</button>
+      <button class="chip" id="saveStory">حفظ القصة ♥</button>
+      <button class="chip" id="download">تنزيل TXT</button>
     </div>
-  </section>
+  </div>
 
-  <section class="panel">
-    <h2>📚 مكتبتي</h2>
-    <div id="library"><div class="empty">لم تحفظ أي قصة بعد.</div></div>
-  </section>
-</main>
-
-<footer>قصتي — عالمك يبدأ من فكرة.</footer>
+  <div class="card" id="hb" style="display:none">
+    <label class="lbl">قصصي السابقة</label>
+    <div id="hist"></div>
+  </div>
+</div>
 
 <div class="modal hidden" id="settingsModal">
   <div class="modal-box">
-    <h2>⚙️ إعدادات Gemini</h2>
-    <p class="note">أدخل مفتاح Gemini API الخاص بك لتفعيل إنشاء القصص.</p>
-
-    <label for="apiKey">Gemini API Key</label>
-    <input id="apiKey" type="password" placeholder="ضع المفتاح هنا">
+    <h2 style="color:var(--pk);margin-top:0">⚙️ إعدادات قصتي</h2>
+    <label class="lbl" for="apiKey">Gemini API Key</label>
+    <input id="apiKey" type="password" placeholder="أدخل مفتاح Gemini API">
 
     <div class="warning">
-      ⚠️ تنبيه مهم: المفتاح سيُحفظ في Local Storage داخل متصفحك.
-      أي شخص يستطيع الوصول إلى الموقع من جهازك أو فحص كوده وبيانات المتصفح
-      قد يتمكن من استخراج المفتاح. لا تستخدم مفتاحًا حساسًا أو مدفوعًا بهذه الطريقة.
-      لا تشارك نسخة الموقع التي تحتوي على مفتاحك.
+      ⚠️ تنبيه الخصوصية: المفتاح سيُحفظ في متصفحك على هذا الجهاز.
+      وضع المفتاح داخل موقع منشور يسمح لمن يفحص الموقع أو المتصفح باستخراجه.
+      لا تستخدم مفتاحًا مهمًا أو مدفوعًا بهذه الطريقة، ولا تشارك الموقع بمفتاحك.
+      كما أن استخدام Gemini المجاني يخضع لسياسة بيانات Google وقد تستخدم الشركة
+      الطلبات لتحسين خدماتها وفق شروط الخطة.
     </div>
 
-    <div class="actions">
-      <button class="btn" id="saveKeyBtn">حفظ المفتاح</button>
-      <button class="btn secondary" id="toggleKeyBtn">إظهار المفتاح</button>
-      <button class="btn danger" id="deleteKeyBtn">حذف المفتاح</button>
-      <button class="btn secondary" id="closeSettingsBtn">إغلاق</button>
+    <div class="modal-actions">
+      <button class="go" id="saveKey" style="margin:0">حفظ المفتاح</button>
+      <button class="chip" id="showKey">إظهار</button>
+      <button class="chip" id="deleteKey">حذف المفتاح</button>
+      <button class="chip" id="closeSettings">إغلاق</button>
     </div>
     <p class="note" id="keyStatus"></p>
-    <p class="note">يمكنك إنشاء مفتاح من Google AI Studio:
-      <a href="https://aistudio.google.com/app/apikey" target="_blank" rel="noopener" style="color:#e9a2c8">فتح AI Studio</a>
+    <p class="note">
+      إنشاء مفتاح:
+      <a href="https://aistudio.google.com/app/apikey" target="_blank" rel="noopener" style="color:var(--pk)">Google AI Studio</a>
     </p>
   </div>
 </div>
@@ -216,122 +186,156 @@ footer{text-align:center;color:var(--muted);font-size:12px;padding:25px}
 <script>
 "use strict";
 
-const MODEL = "gemini-3.8-flash";
-const KEY_STORAGE = "qissaty_gemini_api_key";
-const LIBRARY_STORAGE = "qs";
+const MODEL="gemini-3.8-flash";
+const KEY_NAME="qissaty_gemini_api_key";
+const HISTORY_NAME="qs";
 
-let currentStory = null;
+const G=[
+ {k:"رومانسي",i:"💞",c:"#ff4d8d"},
+ {k:"خيال علمي",i:"🚀",c:"#22d3ee"},
+ {k:"رعب",i:"👻",c:"#a3e635"},
+ {k:"كوميدي",i:"😂",c:"#facc15"},
+ {k:"فانتازيا",i:"🐉",c:"#fb923c"},
+ {k:"مغامرة",i:"🗺️",c:"#38bdf8"},
+ {k:"غموض",i:"🕵️",c:"#8b5cf6"},
+ {k:"دراما",i:"🎭",c:"#f472b6"}
+];
 
-const $ = id => document.getElementById(id);
+const L=[
+ {k:"قصيرة",w:"حوالي 400 كلمة"},
+ {k:"متوسطة",w:"حوالي 900 كلمة"},
+ {k:"طويلة",w:"حوالي 1600 كلمة"}
+];
 
-function getApiKey(){
-  return localStorage.getItem(KEY_STORAGE) || "";
+const H=[
+ {k:"حنون",d:"مسك إيد، أحضان، نظرات، وبوسة خفيفة"},
+ {k:"عاطفي",d:"أحضان طويلة، بوسات حقيقية، همسات وقرب قوي"},
+ {k:"ملتهب",d:"شغف واضح، بوسات عميقة، أحضان ملتصقة، توتر جسدي ورغبة، ويتقفل المشهد بتلميح شاعري"}
+];
+
+const st={g:0,l:1,h:1,text:"",title:"",busy:false};
+const $=id=>document.getElementById(id);
+
+function getKey(){
+  try{return localStorage.getItem(KEY_NAME)||""}
+  catch(e){return ""}
 }
 
 function anonymize(text){
-  return String(text || "")
-    .replaceAll("حنان", "Character_B")
-    .replaceAll("نور", "Character_A");
+  return String(text||"")
+    .replaceAll("نور","Character_A")
+    .replaceAll("حنان","Character_B");
 }
 
 function restoreNames(text){
-  return String(text || "")
-    .replaceAll("Character_A", "نور")
-    .replaceAll("Character_B", "حنان");
+  return String(text||"")
+    .replaceAll("Character_A","نور")
+    .replaceAll("Character_B","حنان");
 }
 
-function showStatus(message, error=false){
-  $("status").textContent = message;
-  $("status").style.color = error ? "#ff8585" : "#e9a2c8";
+function chips(box,arr,key,cls){
+  box.innerHTML="";
+  arr.forEach((x,i)=>{
+    const b=document.createElement("button");
+    b.className=cls+(st[key]===i?" on":"");
+    b.textContent=x.k;
+    b.onclick=()=>{st[key]=i;render()};
+    box.appendChild(b);
+  });
 }
 
-function cleanOutput(text){
-  return String(text || "")
-    .replace(/```json/gi, "")
-    .replace(/```/g, "")
-    .trim();
+function render(){
+  const g=G[st.g];
+  $("genres").innerHTML="";
+  G.forEach((x,i)=>{
+    const b=document.createElement("button");
+    b.className="gb"+(st.g===i?" on":"");
+    b.style.setProperty("--c",x.c);
+    b.textContent=x.i+" "+x.k;
+    b.onclick=()=>{st.g=i;render()};
+    $("genres").appendChild(b);
+  });
+  $("hero").style.setProperty("--c",g.c);
+  $("hic").textContent=g.i;
+  $("htl").textContent=g.k;
+  chips($("lens"),L,"l","chip");
+  chips($("heats"),H,"h","chip");
+  $("heatBox").style.display=st.g===0?"block":"none";
 }
 
-function extractStory(raw){
-  const text = cleanOutput(raw);
+function ls(k,v){
   try{
-    const parsed = JSON.parse(text);
-    return {
-      title: parsed.title || parsed.title_ar || "حكاية جديدة",
-      story: parsed.story || parsed.content || parsed.text || ""
-    };
-  }catch{
-    const titleMatch = text.match(/(?:العنوان|عنوان القصة|title)\s*[:：]\s*(.+)/i);
-    let title = titleMatch ? titleMatch[1].trim() : "حكاية جديدة";
-    let story = titleMatch ? text.replace(titleMatch[0], "").trim() : text;
-    return {title, story};
+    if(v===undefined)return localStorage.getItem(k);
+    localStorage.setItem(k,v);
+  }catch(e){return null}
+}
+
+function prompt_(){
+  const g=G[st.g].k,l=L[st.l];
+  let p=`اكتب قصة من نوع ${g} طولها ${l.w}.`;
+
+  if(st.g===0){
+    p+=` درجة الرومانسية: ${H[st.h].k} (${H[st.h].d}).`;
   }
+
+  const idea=$("idea").value.trim();
+  if(idea)p+=` الفكرة: ${idea}`;
+
+  return p;
 }
 
-function buildPrompt(){
-  const idea = anonymize($("idea").value.trim());
-  const genre = $("genre").value;
-  const length = $("length").value;
-  const mood = $("mood").value;
-  const ending = $("ending").value;
+const SYS=`أنت كاتب قصص عربي موهوب.
+اكتب بعربية سهلة جميلة وبنبرة أدبية دافئة بدون حشو.
+البطلان في كل قصة: "Character_A" (شاب) و"Character_B" (فتاة)، بالغان.
+في القصة الرومانسية هما اللي بيحبوا بعض، بمشاعر وقرب جسدي حسب درجة الرومانسية المطلوبة.
+لا تكتب وصفاً جنسياً صريحاً؛ عند ذروة اللحظة الحميمة انتقل بتلميح شاعري للصباح أو للمشهد اللي بعده.
+في الأنواع الأخرى خلّي Character_A وCharacter_B ثنائياً واضحاً في الأحداث.
+السطر الأول: العنوان: ... ثم سطر فارغ ثم القصة، بدون أي مقدمات.
+التزم بنوع القصة وطولها ودرجة الرومانسية التي اختارها المستخدم.
+اكتب القصة كاملة في إجابة واحدة، ولا تكتب مخططاً أو ملخصاً بدلاً منها.
+لا تكتب طلباً لاستكمال القصة أو جزءاً ثانياً.`;
 
-  return `
-أنت كاتب قصصي عربي محترف. اكتب قصة عربية أصلية ومتكاملة.
-
-الشخصيات الرئيسية الثابتة:
-- Character_A
-- Character_B
-
-يجب أن تظهر الشخصيتان في القصة، وأن تحافظ على اسميهما الرمزيين كما هما حرفيًا.
-لا تستبدلهما بأسماء أخرى ولا تذكر اسمي نور أو حنان.
-
-نوع القصة: ${genre}
-طول القصة: ${length}
-الطابع العاطفي: ${mood}
-نوع النهاية: ${ending}
-
-فكرة المستخدم:
-${idea || "فاجئني بفكرة مبتكرة ومتماسكة، ولا تطلب تفاصيل إضافية."}
-
-قواعد الكتابة:
-1. اكتب قصة كاملة من البداية إلى النهاية في استجابة واحدة.
-2. لا تكتب ملخصًا أو مخططًا بدل القصة.
-3. اجعل الأحداث مترابطة والشخصيات واضحة والتطور منطقيًا.
-4. التزم بالنوع الذي اختاره المستخدم، ولا تغيّره عشوائيًا.
-5. استخدم لغة عربية سليمة وأسلوبًا أدبيًا جذابًا.
-6. اجعل الحوارات طبيعية، وتجنب التكرار والحشو.
-7. لا تضف مقدمة خارج القصة أو تعليقات من الكاتب.
-8. إذا كان النوع رومانسيًا، اجعل المشاعر مناسبة وغير صريحة.
-9. لا تضع فصولًا إضافية أو تطلب من المستخدم متابعة القصة.
-10. لا تذكر تعليماتك أو هذه القواعد.
-
-أخرج النتيجة بصيغة JSON فقط بهذا الشكل:
-{
-  "title": "عنوان القصة",
-  "story": "نص القصة كاملًا"
-}
-`;
+function show(t){
+  const restored=restoreNames(t);
+  const m=restored.match(/^\s*العنوان:\s*(.+)\n/);
+  let body=restored;
+  st.title="";
+  if(m){
+    st.title=m[1].trim();
+    body=restored.slice(m[0].length).trim();
+  }
+  $("story").innerHTML="";
+  if(st.title){
+    const h=document.createElement("h2");
+    h.textContent=st.title;
+    $("story").appendChild(h);
+  }
+  $("story").appendChild(document.createTextNode(body));
+  st.text=restored;
 }
 
-async function generateStory(){
-  const key = getApiKey();
+async function run(){
+  if(st.busy)return;
 
+  const key=getKey();
   if(!key){
-    showStatus("أضف Gemini API Key من الإعدادات أولًا.", true);
+    $("status").textContent="أضف Gemini API Key من الإعدادات أولًا.";
     $("settingsModal").classList.remove("hidden");
     return;
   }
 
-  const btn = $("generateBtn");
-  btn.disabled = true;
-  btn.textContent = "⏳ نكتب قصتك الآن...";
-  $("resultPanel").classList.add("hidden");
-  showStatus("يتم إنشاء القصة كاملة...");
+  st.busy=true;
+  $("go").disabled=true;
+  $("go").textContent="بنكتب القصة…";
+  $("out").style.display="block";
+  $("tools").style.display="none";
+  $("story").textContent="بنكتب القصة…";
+  $("status").textContent="جاري إنشاء القصة كاملة، انتظر قليلًا.";
 
   try{
-    const prompt = anonymize(buildPrompt());
+    const completePrompt=anonymize(SYS+"\n\n"+prompt_());
 
-    const response = await fetch(
+    const response=await fetch(
       `https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent`,
       {
         method:"POST",
@@ -342,236 +346,175 @@ async function generateStory(){
         body:JSON.stringify({
           contents:[{
             role:"user",
-            parts:[{text:prompt}]
+            parts:[{text:completePrompt}]
           }],
           generationConfig:{
             temperature:0.9,
             topP:0.95,
-            maxOutputTokens:8192,
-            responseMimeType:"application/json"
+            maxOutputTokens:8192
           }
         })
       }
     );
 
-    const data = await response.json();
+    const data=await response.json();
 
     if(!response.ok){
-      const message = data?.error?.message || "حدث خطأ أثناء الاتصال بـ Gemini.";
-      throw new Error(message);
+      throw new Error(data?.error?.message||"حدث خطأ في Gemini API");
     }
 
-    const raw = data?.candidates?.[0]?.content?.parts
-      ?.map(part => part.text || "")
-      .join("\n");
+    const raw=data?.candidates?.[0]?.content?.parts
+      ?.map(p=>p.text||"").join("\n");
 
-    if(!raw) throw new Error("لم يرجع Gemini نصًا. حاول مرة أخرى.");
+    if(!raw)throw new Error("لم يرجع المحرك نصًا. حاول مرة أخرى.");
 
-    const parsed = extractStory(raw);
-    const title = restoreNames(parsed.title);
-    const story = restoreNames(parsed.story);
+    show(raw);
+    $("tools").style.display="flex";
+    $("status").textContent="اكتملت القصة بنجاح ✨";
+    save();
 
-    if(!story.trim()) throw new Error("الاستجابة لا تحتوي على قصة.");
-
-    currentStory = {
-      id:Date.now(),
-      title,
-      story,
-      date:new Date().toLocaleString("ar-EG")
-    };
-
-    displayStory(currentStory);
-    showStatus("اكتملت قصتك بنجاح ✨");
-
-  }catch(error){
-    console.error(error);
-    showStatus("تعذر إنشاء القصة: " + error.message, true);
+  }catch(e){
+    console.error(e);
+    $("story").textContent="حصلت مشكلة: "+e.message;
+    $("status").textContent="تعذر إنشاء القصة. راجع المفتاح أو حاول مرة أخرى.";
   }finally{
-    btn.disabled = false;
-    btn.textContent = "✨ أنشئ قصتي";
+    st.busy=false;
+    $("go").disabled=false;
+    $("go").textContent="ألّف القصة ✨";
   }
 }
 
-function displayStory(item){
-  $("storyTitle").textContent = item.title;
-  $("storyText").textContent = item.story;
-  $("resultPanel").classList.remove("hidden");
-  $("resultPanel").scrollIntoView({behavior:"smooth",block:"start"});
-}
-
-function getLibrary(){
+function getHistory(){
   try{
-    const value = JSON.parse(localStorage.getItem(LIBRARY_STORAGE) || "[]");
-    return Array.isArray(value) ? value : [];
-  }catch{
-    return [];
-  }
+    const data=JSON.parse(ls(HISTORY_NAME)||"[]");
+    return Array.isArray(data)?data:[];
+  }catch(e){return []}
 }
 
-function saveCurrentStory(){
-  if(!currentStory) return;
-
-  const stories = getLibrary();
-  const exists = stories.some(s => s.id === currentStory.id);
-
-  if(exists){
-    showStatus("القصة محفوظة بالفعل.");
-    return;
-  }
-
-  stories.unshift(currentStory);
-  localStorage.setItem(LIBRARY_STORAGE, JSON.stringify(stories.slice(0,100)));
-  renderLibrary();
-  showStatus("تم حفظ القصة في مكتبتك ❤️");
+function save(){
+  if(!st.text)return;
+  const history=getHistory();
+  const item={
+    id:Date.now(),
+    title:st.title||"قصة جديدة",
+    text:st.text,
+    date:new Date().toLocaleDateString("ar-EG")
+  };
+  history.unshift(item);
+  ls(HISTORY_NAME,JSON.stringify(history.slice(0,50)));
+  renderHistory();
 }
 
-function renderLibrary(){
-  const stories = getLibrary();
-  const container = $("library");
+function renderHistory(){
+  const history=getHistory();
+  const box=$("hist");
+  box.innerHTML="";
+  $("hb").style.display=history.length?"block":"none";
 
-  if(!stories.length){
-    container.innerHTML = '<div class="empty">لم تحفظ أي قصة بعد.</div>';
-    return;
-  }
+  history.forEach(item=>{
+    const card=document.createElement("div");
+    card.className="history-item";
 
-  container.innerHTML = "";
+    const title=document.createElement("strong");
+    title.textContent=item.title||"قصة بدون عنوان";
 
-  stories.forEach(item=>{
-    const card = document.createElement("div");
-    card.className = "story-card";
+    const date=document.createElement("div");
+    date.className="note";
+    date.textContent=item.date||"";
 
-    const title = document.createElement("h3");
-    title.textContent = item.title || "قصة بدون عنوان";
+    const actions=document.createElement("div");
+    actions.className="history-actions";
 
-    const date = document.createElement("p");
-    date.textContent = item.date || "";
-
-    const actions = document.createElement("div");
-    actions.className = "actions";
-
-    const open = document.createElement("button");
-    open.className = "btn small";
-    open.textContent = "فتح القصة";
-    open.onclick = ()=>{
-      currentStory = item;
-      displayStory(item);
+    const open=document.createElement("button");
+    open.className="chip small";
+    open.textContent="فتح";
+    open.onclick=()=>{
+      st.text=item.text;
+      st.title=item.title;
+      show(item.text);
+      $("out").style.display="block";
+      $("tools").style.display="flex";
+      $("out").scrollIntoView({behavior:"smooth"});
     };
 
-    const edit = document.createElement("button");
-    edit.className = "btn secondary small";
-    edit.textContent = "تعديل";
-    edit.onclick = ()=>editStory(item.id);
+    const remove=document.createElement("button");
+    remove.className="chip small";
+    remove.textContent="حذف";
+    remove.onclick=()=>{
+      if(!confirm("هل تريد حذف القصة؟"))return;
+      ls(HISTORY_NAME,JSON.stringify(getHistory().filter(x=>x.id!==item.id)));
+      renderHistory();
+    };
 
-    const remove = document.createElement("button");
-    remove.className = "btn danger small";
-    remove.textContent = "حذف";
-    remove.onclick = ()=>deleteStory(item.id);
-
-    actions.append(open,edit,remove);
+    actions.append(open,remove);
     card.append(title,date,actions);
-    container.append(card);
+    box.appendChild(card);
   });
 }
 
-function editStory(id){
-  const stories = getLibrary();
-  const item = stories.find(s=>s.id === id);
-  if(!item) return;
+$("go").onclick=run;
 
-  const newTitle = prompt("عدّل عنوان القصة:", item.title);
-  if(newTitle === null) return;
-
-  const newStory = prompt("عدّل نص القصة:", item.story);
-  if(newStory === null) return;
-
-  item.title = newTitle.trim() || item.title;
-  item.story = newStory;
-  localStorage.setItem(LIBRARY_STORAGE,JSON.stringify(stories));
-
-  if(currentStory && currentStory.id === id){
-    currentStory = item;
-    displayStory(item);
+$("copy").onclick=async()=>{
+  try{
+    await navigator.clipboard.writeText(st.text);
+    $("status").textContent="تم نسخ القصة.";
+  }catch(e){
+    $("status").textContent="تعذر النسخ من المتصفح.";
   }
+};
 
-  renderLibrary();
-}
+$("saveStory").onclick=()=>{
+  const history=getHistory();
+  if(history.some(x=>x.text===st.text)){
+    $("status").textContent="القصة محفوظة بالفعل.";
+    return;
+  }
+  save();
+  $("status").textContent="تم حفظ القصة في قصصي السابقة ♥";
+};
 
-function deleteStory(id){
-  if(!confirm("هل تريد حذف هذه القصة من المكتبة؟")) return;
-
-  const stories = getLibrary().filter(s=>s.id !== id);
-  localStorage.setItem(LIBRARY_STORAGE,JSON.stringify(stories));
-
-  if(currentStory && currentStory.id === id) currentStory = null;
-  renderLibrary();
-}
-
-function copyStory(){
-  if(!currentStory) return;
-
-  const text = currentStory.title + "\n\n" + currentStory.story;
-  navigator.clipboard.writeText(text)
-    .then(()=>showStatus("تم نسخ القصة."))
-    .catch(()=>showStatus("تعذر النسخ من المتصفح.",true));
-}
-
-function downloadStory(){
-  if(!currentStory) return;
-
-  const text = currentStory.title + "\n\n" + currentStory.story;
-  const blob = new Blob(["\uFEFF"+text],{type:"text/plain;charset=utf-8"});
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement("a");
-  a.href = url;
-  a.download = (currentStory.title || "قصتي") + ".txt";
-  document.body.appendChild(a);
+$("download").onclick=()=>{
+  const blob=new Blob(["\uFEFF"+st.text],{type:"text/plain;charset=utf-8"});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement("a");
+  a.href=url;
+  a.download=(st.title||"قصتي")+".txt";
   a.click();
-  a.remove();
   URL.revokeObjectURL(url);
-}
+};
 
-$("settingsBtn").onclick = ()=>{
-  $("apiKey").value = getApiKey();
-  $("keyStatus").textContent = getApiKey()
-    ? "يوجد مفتاح محفوظ على هذا الجهاز."
-    : "لا يوجد مفتاح محفوظ حاليًا.";
+$("settingsBtn").onclick=()=>{
+  $("apiKey").value=getKey();
+  $("keyStatus").textContent=getKey()?"يوجد مفتاح محفوظ على هذا الجهاز.":"لا يوجد مفتاح محفوظ.";
   $("settingsModal").classList.remove("hidden");
 };
 
-$("closeSettingsBtn").onclick = ()=> $("settingsModal").classList.add("hidden");
+$("closeSettings").onclick=()=>{
+  $("settingsModal").classList.add("hidden");
+};
 
-$("saveKeyBtn").onclick = ()=>{
-  const key = $("apiKey").value.trim();
+$("saveKey").onclick=()=>{
+  const key=$("apiKey").value.trim();
   if(!key){
-    $("keyStatus").textContent = "أدخل المفتاح أولًا.";
+    $("keyStatus").textContent="أدخل المفتاح أولًا.";
     return;
   }
-  localStorage.setItem(KEY_STORAGE,key);
-  $("keyStatus").textContent = "تم حفظ المفتاح على هذا الجهاز.";
+  ls(KEY_NAME,key);
+  $("keyStatus").textContent="تم حفظ المفتاح محليًا.";
 };
 
-$("deleteKeyBtn").onclick = ()=>{
-  localStorage.removeItem(KEY_STORAGE);
-  $("apiKey").value = "";
-  $("keyStatus").textContent = "تم حذف المفتاح من هذا المتصفح.";
+$("deleteKey").onclick=()=>{
+  localStorage.removeItem(KEY_NAME);
+  $("apiKey").value="";
+  $("keyStatus").textContent="تم حذف المفتاح.";
 };
 
-$("toggleKeyBtn").onclick = ()=>{
-  $("apiKey").type = $("apiKey").type === "password" ? "text" : "password";
+$("showKey").onclick=()=>{
+  $("apiKey").type=$("apiKey").type==="password"?"text":"password";
 };
 
-$("generateBtn").onclick = generateStory;
-$("saveBtn").onclick = saveCurrentStory;
-$("copyBtn").onclick = copyStory;
-$("downloadBtn").onclick = downloadStory;
-$("newBtn").onclick = ()=>{
-  $("idea").value = "";
-  $("resultPanel").classList.add("hidden");
-  $("idea").focus();
-  showStatus("جاهز لقصة جديدة.");
-};
-
-renderLibrary();
+render();
+renderHistory();
 </script>
 </body>
 </html>
